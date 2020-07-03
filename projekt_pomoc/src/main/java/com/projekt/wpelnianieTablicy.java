@@ -19,7 +19,7 @@ public class wpelnianieTablicy {
 
         datapoject.setBook("zmienna");
         datapoject1.setName("test");
-        datapoject2.setSurname("test");
+        datapoject2.setSurname("tezd");
 
         autorRepo.save(datapoject1);
         autorRepo.save(datapoject2);

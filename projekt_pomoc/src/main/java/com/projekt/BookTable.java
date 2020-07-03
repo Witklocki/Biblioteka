@@ -8,9 +8,7 @@ import java.util.List;
 @Entity
 @Table(name = "Book")
 public class BookTable {
-    @GeneratedValue
-    @Id
-    private Long id;
+    @GeneratedValue @Id Long id;
 
     private String book;
 
