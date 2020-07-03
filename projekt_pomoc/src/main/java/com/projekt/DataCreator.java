@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping()
 @ResponseBody
 @Controller
-public class TestTest {
-    private final Service service;
+public class DataCreator {
+    private final wpelnianieTablicy wpelnianieTablicy;
 
-    public TestTest(Service service) {
-        this.service = service;
+    public DataCreator(wpelnianieTablicy wpelnianieTablicy) {
+        this.wpelnianieTablicy = wpelnianieTablicy;
     }
     @GetMapping("/test")
      public void hello(){
-         this.service.test();
+         this.wpelnianieTablicy.test();
         System.out.println("test");
     }
 
