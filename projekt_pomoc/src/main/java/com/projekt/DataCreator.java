@@ -16,7 +16,7 @@ public class DataCreator {
     @GetMapping("/test")
      public void hello(){
          this.wpelnianieTablicy.test();
-        System.out.println("test");
+        System.out.print("cos");
     }
 
 }

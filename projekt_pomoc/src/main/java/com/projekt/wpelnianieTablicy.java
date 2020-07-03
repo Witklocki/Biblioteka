@@ -9,9 +9,16 @@ public class wpelnianieTablicy {
     }
 
     public void test(){
-        DataBaseCreator datapoject = new DataBaseCreator();
-        datapoject.setTsu("cos");
+        String zmienna = "Tadek";
+        String imie = "Adaś";
+        String nazwisko = "Adaś";
+
+        BookTable datapoject = new BookTable();
+
+        datapoject.setBook(zmienna);
+
         repo.save(datapoject);
+        System.out.println(zmienna);
 
     }
 }
