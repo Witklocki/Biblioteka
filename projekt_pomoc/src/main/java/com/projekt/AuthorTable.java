@@ -12,10 +12,23 @@ public class AuthorTable {
 
     private String name;
     private String surname;
-    @OneToMany
-    private BookTable bookTable;
-    private final List<BookTable> showings = new ArrayList<>();
 
+    @OneToMany(cascade = CascadeType.ALL)
+    private final List<BookTable> bookTables = new ArrayList<>();
+    public void addBookTable(BookTable bookTable) {
+        bookTables.add(bookTable);
+    }
+
+    public void removeBookTable(BookTable bookTable) {
+        bookTables.remove(bookTable);
+    }
+
+    public Long getIdAuthor() {
+        return idAuthor;
+    }
+    public void setIdAuthor(Long idAuthor) {
+        this.idAuthor = idAuthor;
+    }
     public String getName() {
         return name;
     }
@@ -28,11 +41,9 @@ public class AuthorTable {
     public void setSurname(String surname) {
         this.surname = surname;
     }
-    public Long getIdAuthor() {
-        return idAuthor;
-    }
-    public void setIdAuthor(Long idAuthor) {
-        this.idAuthor = idAuthor;
-    }
 
+
+    public List<BookTable> getBookTables() {
+        return bookTables;
+    }
 }

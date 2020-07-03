@@ -15,7 +15,6 @@ public class BookTable {
     private String book;
 
     private Long idAuthor;
-
     @OneToOne
     private AuthorTable authorTable;
 
@@ -41,6 +40,10 @@ public class BookTable {
         this.idAuthor = idAuthor;
     }
 
-
-
+    public AuthorTable getAuthorTable() {
+        return authorTable;
+    }
+    public void setAuthorTable(AuthorTable authorTable) {
+        this.authorTable = authorTable;
+    }
 }

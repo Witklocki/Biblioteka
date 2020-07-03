@@ -24,6 +24,5 @@ public class GetData {
 
     public List<BookTable> findAll() {
         return repo.findAll();
-
     }
 }
