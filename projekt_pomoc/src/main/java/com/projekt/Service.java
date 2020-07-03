@@ -9,7 +9,7 @@ public class Service {
     }
 
     public void test(){
-        Test datapoject = new Test();
+        DataBaseCreator datapoject = new DataBaseCreator();
         datapoject.setTsu("cos");
         repo.save(datapoject);
 

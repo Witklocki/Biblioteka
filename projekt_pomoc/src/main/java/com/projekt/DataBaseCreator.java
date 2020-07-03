@@ -4,8 +4,8 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "Test")
-public class Test {
+@Table(name = "DataBaseCreator")
+public class DataBaseCreator {
     @GeneratedValue
     @Id
     private Long id;

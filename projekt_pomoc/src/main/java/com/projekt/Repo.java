@@ -2,5 +2,5 @@ package com.projekt;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface Repo extends JpaRepository<Test, Long> {
+public interface Repo extends JpaRepository<DataBaseCreator, Long> {
 }
