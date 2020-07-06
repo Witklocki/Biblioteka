@@ -13,12 +13,14 @@ public class AuthorTable {
     private String name;
     private String surname;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "idAuthor",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private final List<BookTable> bookTables = new ArrayList<>();
+
+
+
     public void addBookTable(BookTable bookTable) {
         bookTables.add(bookTable);
     }
-
     public void removeBookTable(BookTable bookTable) {
         bookTables.remove(bookTable);
     }
@@ -29,12 +31,14 @@ public class AuthorTable {
     public void setIdAuthor(Long idAuthor) {
         this.idAuthor = idAuthor;
     }
+    @Column(columnDefinition = "text")
     public String getName() {
         return name;
     }
     public void setName(String name) {
         this.name = name;
     }
+    @Column(columnDefinition = "text")
     public String getSurname() {
         return surname;
     }
@@ -46,4 +50,4 @@ public class AuthorTable {
     public List<BookTable> getBookTables() {
         return bookTables;
     }
-}
+    }

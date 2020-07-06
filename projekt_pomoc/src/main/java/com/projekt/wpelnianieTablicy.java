@@ -3,11 +3,11 @@ package com.projekt;
 @org.springframework.stereotype.Service
 
 public class wpelnianieTablicy {
-    private final com.projekt.Repo repo;
+    private final BookRepo bookRepo;
     private final com.projekt.AutorRepo autorRepo;
 
-    public wpelnianieTablicy(Repo repo, AutorRepo autorRepo) {
-        this.repo = repo;
+    public wpelnianieTablicy(BookRepo bookRepo, AutorRepo autorRepo) {
+        this.bookRepo = bookRepo;
         this.autorRepo = autorRepo;
     }
 
@@ -18,14 +18,14 @@ public class wpelnianieTablicy {
         AuthorTable datapoject2 = new AuthorTable();
 
         datapoject.setBook("zmienna");
-        datapoject1.setName("test");
-        datapoject2.setSurname("tezd");
+        datapoject.setAuthorTable(datapoject1);
+        datapoject1.setName("test1");
+        datapoject1.setSurname("tezt");
 
         autorRepo.save(datapoject1);
-        autorRepo.save(datapoject2);
-        repo.save(datapoject);
+        bookRepo.save(datapoject);
 
-        System.out.println(this.repo.findAll());
+        System.out.println(this.bookRepo.findAll());
         System.out.println(this.autorRepo.findAll());
 
     }

@@ -1,8 +1,6 @@
 package com.projekt;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @Entity
@@ -13,24 +11,30 @@ public class BookTable {
     private String book;
 
     private Long idAuthor;
-    @OneToOne
+    @ManyToOne
+    @JoinColumn (name = "FK_idAuthor", nullable = false)
     private AuthorTable authorTable;
+
+
 
     public BookTable() {
     }
 
+
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;}
+
+    @Column(columnDefinition = "text")
     public String getBook() {
         return book;
     }
     public void setBook(String book) {
         this.book = book;
     }
+
     public Long getIdAuthor() {
         return idAuthor;
     }
