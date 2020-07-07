@@ -4,12 +4,15 @@ import com.projekt.repo.AuthorRepository;
 import com.projekt.repo.BookRepository;
 import com.projekt.tables.AuthorTable;
 import com.projekt.tables.BookTable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.StreamingHttpOutputMessage;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
+import static org.springframework.http.StreamingHttpOutputMessage.*;
 
 @RequestMapping()
 @ResponseBody
@@ -54,5 +57,14 @@ public class DataCreator {
         }
         while(i<3);
         return bookRepository.findAll();
+    }
+
+    @PostMapping("/create")
+    public ResponseEntity create(@RequestBody AuthorTable authorTable){
+        return new ResponseEntity(this.authorRepository.save(authorTable), HttpStatus.ACCEPTED);
+    }
+    @PutMapping("/put")
+    public ResponseEntity put (@RequestBody AuthorTable authorTable){
+        return new ResponseEntity(this.authorRepository.save(authorTable),HttpStatus.ACCEPTED);
     }
 }
