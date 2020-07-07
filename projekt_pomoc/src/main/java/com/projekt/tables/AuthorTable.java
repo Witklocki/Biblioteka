@@ -7,31 +7,30 @@ import java.util.List;
 public class AuthorTable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String name;
     private String surname;
 
-    @OneToMany
+    @OneToMany(mappedBy ="authorTable")
     private List<BookTable> bookTable;
 
     public AuthorTable() {
     }
 
-    public List<BookTable> getBookTable() {
-        return bookTable;
-    }
-
-    public void setBookTable(List<BookTable> bookTable) {
+    public AuthorTable(Long id, String name, String surname, List<BookTable> bookTable) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
         this.bookTable = bookTable;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -49,5 +48,13 @@ public class AuthorTable {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public List<BookTable> getBookTable() {
+        return bookTable;
+    }
+
+    public void setBookTable(List<BookTable> bookTable) {
+        this.bookTable = bookTable;
     }
 }

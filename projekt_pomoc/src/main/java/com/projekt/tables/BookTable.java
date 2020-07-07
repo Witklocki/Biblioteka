@@ -1,10 +1,8 @@
 package com.projekt.tables;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
+@Entity
 public class BookTable {
 
 
@@ -20,19 +18,17 @@ public class BookTable {
     public BookTable() {
     }
 
-    public AuthorTable getAuthorTable() {
-        return authorTable;
-    }
-
-    public void setAuthorTable(AuthorTable authorTable) {
+    public BookTable(Long id, String bookName, AuthorTable authorTable) {
+        this.id = id;
+        this.bookName = bookName;
         this.authorTable = authorTable;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -42,5 +38,13 @@ public class BookTable {
 
     public void setBookName(String bookName) {
         this.bookName = bookName;
+    }
+
+    public AuthorTable getAuthorTable() {
+        return authorTable;
+    }
+
+    public void setAuthorTable(AuthorTable authorTable) {
+        this.authorTable = authorTable;
     }
 }
