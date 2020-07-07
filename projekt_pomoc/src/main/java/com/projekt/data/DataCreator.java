@@ -28,7 +28,6 @@ public class DataCreator {
         authorTable.setName("test");
         authorTable.setSurname("test");
         authorRepository.save(authorTable);
-
         BookTable bookTable = new BookTable();
         bookTable.setBookName("test");
         bookTable.setAuthorTable(authorTable);
@@ -39,14 +38,21 @@ public class DataCreator {
     @GetMapping("/testForBook")
     public List<BookTable> returnBooks(){
         AuthorTable authorTable = new AuthorTable();
-        authorTable.setName("test");
-        authorTable.setSurname("test");
+        authorTable.setName("jan");
+        authorTable.setSurname("naj");
         authorRepository.save(authorTable);
-
-        BookTable bookTable = new BookTable();
-        bookTable.setBookName("test");
-        bookTable.setAuthorTable(authorTable);
-        bookRepository.save(bookTable);
+        /* postarać się zamienić do while na .saveALL lecz ta meoda działa tylko jest słabo elastczna */
+        /* z alikacji weźmie tablicę z wpisami i doda każdy pokolei */
+        int i = 0;
+        do {
+            BookTable bookTable = new BookTable();
+            String[] books={"jeden","dwa","trzy"};
+            bookTable.setBookName(books[i]);
+            bookTable.setAuthorTable(authorTable);
+            bookRepository.save(bookTable);
+            i++;
+        }
+        while(i<3);
         return bookRepository.findAll();
     }
 }
