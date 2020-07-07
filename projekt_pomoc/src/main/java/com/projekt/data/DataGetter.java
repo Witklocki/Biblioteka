@@ -33,6 +33,8 @@ public class DataGetter {
     public List<BookTable> books(){
         return bookRepository.findAll();
     }
+    /* wyszukiwanie po wpisanie danych do type="text" */
+
     @GetMapping("/author")
     public List<AuthorTable> author(){
         return authorRepository.findByName("test");
