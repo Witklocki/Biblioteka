@@ -1,5 +1,7 @@
 package com.projekt.tables;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,6 +15,7 @@ public class BookTable {
     private String bookName;
 
     @ManyToOne
+    @JsonIgnore
     private AuthorTable authorTable;
 
     public BookTable() {

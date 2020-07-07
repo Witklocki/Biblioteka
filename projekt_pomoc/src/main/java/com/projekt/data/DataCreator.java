@@ -49,6 +49,4 @@ public class DataCreator {
         bookRepository.save(bookTable);
         return bookRepository.findAll();
     }
-
-
 }
