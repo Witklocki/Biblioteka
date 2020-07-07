@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@Entity
-@Table(name = "Author")
+//@Entity
+//@Table(name = "Author")
 public class AuthorTable {
     @GeneratedValue @Id Long idAuthor;
 

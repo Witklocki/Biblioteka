@@ -3,8 +3,8 @@ package com.projekt;
 import javax.persistence.*;
 
 
-@Entity
-@Table(name = "Book")
+//@Entity
+//@Table(name = "Book")
 public class BookTable {
     @GeneratedValue @Id Long id;
 

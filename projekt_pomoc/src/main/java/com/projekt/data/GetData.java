@@ -1,6 +1,8 @@
-package com.projekt;
+package com.projekt.data;
 
-import org.hibernate.loader.custom.Return;
+import com.projekt.repo.AuthorRepository;
+import com.projekt.repo.BookRepository;
+import com.projekt.tables.BookTable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,10 +15,10 @@ import java.util.List;
 @Controller
 
 public class GetData {
-    private final AutorRepo autorRepo;
-    private final BookRepo bookRepo;
+    private final AuthorRepository autorRepo;
+    private final BookRepository bookRepo;
 
-    public GetData(AutorRepo autorRepo, BookRepo bookRepo) {
+    public GetData(AuthorRepository autorRepo, BookRepository bookRepo) {
         this.autorRepo = autorRepo;
         this.bookRepo = bookRepo;
     }

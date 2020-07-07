@@ -1,12 +1,18 @@
-package com.projekt;
+package com.projekt.data;
+
+
+import com.projekt.repo.AuthorRepository;
+import com.projekt.repo.BookRepository;
+import com.projekt.tables.AuthorTable;
+import com.projekt.tables.BookTable;
 
 @org.springframework.stereotype.Service
 
 public class wpelnianieTablicy {
-    private final BookRepo bookRepo;
-    private final com.projekt.AutorRepo autorRepo;
+    private final BookRepository bookRepo;
+    private final AuthorRepository autorRepo;
 
-    public wpelnianieTablicy(BookRepo bookRepo, AutorRepo autorRepo) {
+    public wpelnianieTablicy(BookRepository bookRepo, AuthorRepository autorRepo) {
         this.bookRepo = bookRepo;
         this.autorRepo = autorRepo;
     }
@@ -17,7 +23,7 @@ public class wpelnianieTablicy {
         AuthorTable datapoject1 = new AuthorTable();
         AuthorTable datapoject2 = new AuthorTable();
 
-        datapoject.setBook("zmienna");
+        datapoject.setBookName("zmienna");
         datapoject.setAuthorTable(datapoject1);
         datapoject1.setName("test1");
         datapoject1.setSurname("tezt");
