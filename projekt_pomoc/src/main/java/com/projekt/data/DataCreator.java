@@ -6,13 +6,10 @@ import com.projekt.tables.AuthorTable;
 import com.projekt.tables.BookTable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.StreamingHttpOutputMessage;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
-import static org.springframework.http.StreamingHttpOutputMessage.*;
+import java.util.*;
 
 @RequestMapping()
 @ResponseBody
@@ -60,11 +57,49 @@ public class DataCreator {
     }
 
     @PostMapping("/create")
-    public ResponseEntity create(@RequestBody AuthorTable authorTable){
-        return new ResponseEntity(this.authorRepository.save(authorTable), HttpStatus.ACCEPTED);
+    public ResponseEntity create(@RequestBody AuthorTable authorTable, BookTable bookTable){
+        bookRepository.save(bookTable);
+        bookTable.setAuthorTable(authorTable);
+        return new ResponseEntity(this.authorRepository.save(authorTable),HttpStatus.ACCEPTED);
     }
+
     @PutMapping("/put")
     public ResponseEntity put (@RequestBody AuthorTable authorTable){
         return new ResponseEntity(this.authorRepository.save(authorTable),HttpStatus.ACCEPTED);
     }
+    @DeleteMapping("/delete/{id}")
+    public Map<String, Boolean> delete(@PathVariable(value = "id")@RequestBody Long authorId){
+        AuthorTable authorTable = authorRepository.findById(authorId).orElse(null);
+
+        authorRepository.deleteById(authorId);
+        Map<String,Boolean> response =new HashMap<>();
+        response.put("delete",Boolean.TRUE);
+
+        return response;
+    }
+    @GetMapping("/getById/{id}")
+    public Object getById(@PathVariable(value = "id")@RequestBody Long auhorId){
+            AuthorTable authorTable = authorRepository.findById(auhorId).orElse(null);
+           return authorTable;
+    }
+    @PostMapping("/createBook")
+    public ResponseEntity createBook(@RequestBody BookTable bookTable){
+        return new ResponseEntity(this.bookRepository.save(bookTable), HttpStatus.ACCEPTED);
+    }
+    @DeleteMapping("/deleteBook/{id}")
+    public Map<String, Boolean> deleteBook(@PathVariable(value = "id")@RequestBody Long bookId){
+        BookTable bookTable = bookRepository.findById(bookId).orElse(null);
+
+        bookRepository.deleteById(bookId);
+        Map<String,Boolean> response =new HashMap<>();
+        response.put("delete",Boolean.TRUE);
+
+        return response;
+    }
+    @GetMapping("/getByIdBook/{id}")
+    public Object getByIdBook(@PathVariable(value = "id")@RequestBody Long bookId){
+        BookTable bookTable = bookRepository.findById(bookId).orElse(null);
+        return bookTable;
+    }
+
 }
