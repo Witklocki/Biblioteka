@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface BookRepository extends JpaRepository<BookTable, Long> {
 
+//    findByBookName - camelcase everywhere!
     List<BookTable> findBybookName(String bookName);
 }

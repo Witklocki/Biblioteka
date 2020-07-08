@@ -15,6 +15,7 @@ public class BookTable {
     private String bookName;
 
     @ManyToOne
+//  Są lepsze rozwiązania tego problemu (https://stackoverflow.com/questions/31319358/jsonmanagedreference-vs-jsonbackreference)
     @JsonIgnore
     private AuthorTable authorTable;
 

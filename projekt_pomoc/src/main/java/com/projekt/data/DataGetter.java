@@ -13,8 +13,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @RequestMapping
+// RestController
 @Controller
+// Po co to ?
 @ResponseBody
+
+/* DataGetter?
+ * Controller jest pod daną funknonalość lub encje, czyli powinny być 2, jeden dla Author drugi dla Book
+ *AuthorController:
+ * Get - pobiera wszystkich
+ * Post - Tworzy autora
+ *Put - akutalizuje autora
+ * Delete - usuwa
+ * Get - z id w path, pobiera pojedyńczego
+ * i to samo dla book
+ */
 
 public class DataGetter {
     private final AuthorRepository authorRepository;
@@ -24,23 +37,26 @@ public class DataGetter {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
     }
+
     /* przełączane przez menu na stronie type="radio" */
     @GetMapping("/authors")
-    public List<AuthorTable> authors(){
+    public List<AuthorTable> authors() {
         return authorRepository.findAll();
     }
+
     @GetMapping("/books")
-    public List<BookTable> books(){
+    public List<BookTable> books() {
         return bookRepository.findAll();
     }
     /* wyszukiwanie po wpisanie danych do type="text" */
 
     @GetMapping("/author")
-    public List<AuthorTable> author(){
+    public List<AuthorTable> author() {
         return authorRepository.findByName("test");
     }
+
     @GetMapping("/book")
-    public List<BookTable> book(){
-       return bookRepository.findBybookName("jeden");
+    public List<BookTable> book() {
+        return bookRepository.findBybookName("jeden");
     }
 }

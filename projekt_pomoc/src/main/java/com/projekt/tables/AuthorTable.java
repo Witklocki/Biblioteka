@@ -3,6 +3,7 @@ package com.projekt.tables;
 import javax.persistence.*;
 import java.util.List;
 
+// Proponuje poczytać o Lomboku, skróci ilość kodu
 @Entity
 public class AuthorTable {
 
