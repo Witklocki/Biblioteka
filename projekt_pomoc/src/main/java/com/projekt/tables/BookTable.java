@@ -1,6 +1,9 @@
 package com.projekt.tables;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 
@@ -15,8 +18,7 @@ public class BookTable {
     private String bookName;
 
     @ManyToOne
-//  Są lepsze rozwiązania tego problemu (https://stackoverflow.com/questions/31319358/jsonmanagedreference-vs-jsonbackreference)
-    @JsonIgnore
+    @JsonBackReference
     private AuthorTable authorTable;
 
     public BookTable() {
@@ -44,8 +46,8 @@ public class BookTable {
         this.bookName = bookName;
     }
 
-    public AuthorTable getAuthorTable() {
-        return authorTable;
+    public AuthorTable getAuthorTable(AuthorTable authorTable) {
+        return this.authorTable;
     }
 
     public void setAuthorTable(AuthorTable authorTable) {

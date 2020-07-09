@@ -1,5 +1,10 @@
 package com.projekt.tables;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -14,7 +19,9 @@ public class AuthorTable {
     private String name;
     private String surname;
 
-    @OneToMany(mappedBy ="authorTable")
+    @OneToMany(mappedBy ="authorTable", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private List<BookTable> bookTable;
 
     public AuthorTable() {
