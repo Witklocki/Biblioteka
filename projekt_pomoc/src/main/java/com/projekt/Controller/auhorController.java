@@ -52,9 +52,17 @@ public class auhorController {
             return ResponseEntity.noContent().build();
         }
     }
-/* Update records */
-    @PutMapping("/put")
-    public ResponseEntity<AuthorTable> updateAuthor(@RequestBody AuthorTable authorTable){
-        return ResponseEntity.ok(this.authorRepository.save(authorTable));
+/* Update records by id */
+    @PutMapping("/put/{id}")
+    public ResponseEntity<Object> updateAuthor(@PathVariable Long id, @RequestBody AuthorTable authorTable ){
+        Optional<AuthorTable> optionalAuthorTable = authorRepository.findById(id);
+            if (optionalAuthorTable.isPresent()) {
+                authorTable.setId(id);
+                authorRepository.save(authorTable);
+                return ResponseEntity.noContent().build();
+            }
+            else {
+                return ResponseEntity.noContent().build();
+            }
     }
 }
