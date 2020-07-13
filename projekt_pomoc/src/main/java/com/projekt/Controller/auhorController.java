@@ -58,8 +58,7 @@ public class auhorController {
         Optional<AuthorTable> optionalAuthorTable = authorRepository.findById(id);
             if (optionalAuthorTable.isPresent()) {
                 authorTable.setId(id);
-                authorRepository.save(authorTable);
-                return ResponseEntity.noContent().build();
+                return new ResponseEntity(this.authorRepository.save(authorTable), HttpStatus.ACCEPTED);
             }
             else {
                 return ResponseEntity.noContent().build();
