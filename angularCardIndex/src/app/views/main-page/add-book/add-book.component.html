@@ -1,0 +1,14 @@
+<div class="container">
+    <form #userForm="ngForm" (ngSubmit)="  onBook()" novalidate>
+        <div class="form-group ">
+            <label>
+                Name:
+                <input class="form-control" #title="ngModel" placeholder="Title" 
+                name="bookName" [(ngModel)]="bookModel.bookName" required >
+            </label>
+        </div>
+                <button
+                type="submit" class="btn btn-primary">Create
+                </button>
+    </form> 
+</div>

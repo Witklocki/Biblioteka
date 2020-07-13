@@ -13,11 +13,11 @@ import java.util.Optional;
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping
 @RestController
-public class auhorController {
+public class AuthorController {
     private BookRepository bookRepository;
     private AuthorRepository authorRepository;
     
-    public auhorController(AuthorRepository authorRepository, BookRepository bookRepository) {
+    public AuthorController(AuthorRepository authorRepository, BookRepository bookRepository) {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
     }

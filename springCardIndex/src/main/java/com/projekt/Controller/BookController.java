@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping
 @RestController
-public class bookController {
+public class BookController {
     private BookRepository bookRepository;
     private AuthorRepository authorRepository;
 
-    public bookController(AuthorRepository authorRepository, BookRepository bookRepository) {
+    public BookController(AuthorRepository authorRepository, BookRepository bookRepository) {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
     }

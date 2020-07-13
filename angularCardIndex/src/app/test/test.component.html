@@ -1,0 +1,55 @@
+<div>
+    <p>"{{test}}"</p>
+</div>
+<br><br><br>
+<table class="col-12 table table-dark">
+    <thead>
+        <th scope="col-2" >Name</th>
+        <th scope="col-2">Surname</th>
+        <th scope="col-2" >Books</th>
+    </thead>
+    <tbody *ngFor="let author of authors">
+        <td>
+            {{author.name}}
+        </td>
+        <td>
+            {{author.surname}}
+        </td>
+        <td>
+            <ul *ngFor="let bookTable of author.bookTable">
+                {{bookTable.bookName}}
+            </ul>
+        </td>
+        <td>
+            <form (ngSubmit)="onDelete(author.id)">
+                <button type="submit" class="bg-danger btn" name="id">
+                    Delete </button>
+            </form>
+            
+        </td>
+        <td>
+            <form (ngSubmit)="changeOn()" >
+                <button type="submit" class="bg-warning btn" name="id">
+                    Change </button>
+            </form>
+            <form #changeForm="ngForm" novalidate (ngSubmit)="onPut(author.id)" *ngIf="change">
+                {{changeForm.value | json}}
+                <div class="form-group">
+                    <label>
+                        New name
+                    </label>
+                    <input type="text" name="changeName" class="form-control" ngModel
+                    placeholder="new name" [(ngModel)]="updateModel.name"> 
+                </div>
+                <div class="form-group">
+                    <label>
+                        New surname
+                    </label>
+                    <input type="text" name="changeSurnme" class="form-control" ngModel
+                    placeholder="new surname" [(ngModel)]="updateModel.surname">
+                </div>
+                <button type="submit" class="bg-warning btn">Submit</button>
+            </form>
+        </td>
+    </tbody>
+</table>
