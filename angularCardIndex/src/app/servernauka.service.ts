@@ -27,9 +27,11 @@ export class ServernaukaService {
     return this._http.delete(this._url+"/delete/"+id,id)
   }
   putSever(id, Update:update){
+    console.log(id)
     return this._http.put(this._url+"/put/"+id, Update)
   }
-  postSeverBook(Book: Book){
-    return this._http.post<any>(this._url+"/createBook",Book)
+  postSeverBook(Book: Book, id){
+    console.log(Book)
+    return this._http.post<any>(this._url+"/createBook/"+id,Book)
   }
 }

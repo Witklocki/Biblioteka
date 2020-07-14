@@ -22,11 +22,23 @@ public class BookController {
         this.bookRepository = bookRepository;
     }
 /* Create records */
-    @PostMapping("/createBook")
-    public ResponseEntity post(@RequestBody BookTable bookTable, AuthorTable authorTable){
-        bookTable.getAuthorTable(authorTable);
-        return new ResponseEntity(this.bookRepository.save(bookTable), HttpStatus.ACCEPTED);
-    }
+//    @PostMapping("/createBook")
+//    public ResponseEntity post(@RequestBody BookTable bookTable, AuthorTable authorTable){
+//        bookTable.getAuthorTable(authorTable);
+//        return new ResponseEntity(this.bookRepository.save(bookTable), HttpStatus.ACCEPTED);
+//    }
+    @PostMapping("/createBook/{id}")
+    public ResponseEntity<Object> postBook(@PathVariable Long id, @RequestBody BookTable bookTable, AuthorTable authorTable ){
+        Optional<AuthorTable> optionalAuthorTable = authorRepository.findById(id);
+        if (optionalAuthorTable.isPresent()) {
+            bookTable.setAuthorTable(authorTable);
+            return new ResponseEntity(this.bookRepository.save(bookTable), HttpStatus.ACCEPTED);
+        }
+        else {
+
+            return ResponseEntity.noContent().build();
+        }}
+
 /* Find record by id */
     @GetMapping("/getBook/{id}")
     public ResponseEntity getBooks (@PathVariable(value = "id") @RequestBody Long bookId){
