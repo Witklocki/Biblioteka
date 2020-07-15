@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ServernaukaService} from '../../../servernauka.service';
-import { Book } from "../../../model/Mthods/Book";
+import { Book } from "src/app//model/Mthods/Book";
 import { Help } from 'src/app/model/Mthods/Help';
 
 
@@ -23,7 +23,7 @@ export class AddBookComponent implements OnInit {
   onBook(){
     this.id = Object.values(this.helpModel);
      this._servernaukaService.postSeverBook(this.bookModel, this.id)
-      .subscribe()
+      .subscribe(data=> {alert("Book Added")})
       this.bookModel = new Book();
   }
 }

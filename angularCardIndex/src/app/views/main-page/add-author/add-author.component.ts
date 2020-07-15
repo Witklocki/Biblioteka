@@ -17,7 +17,7 @@ export class AddAuthorComponent implements OnInit {
   onSubmit() {
     this.done = false;
     this._servernaukaService.postServer(this.authorModel)
-      .subscribe()
+      .subscribe(data=> {alert("Book Added")})
     this.authorModel = new Authors()
   }
 
