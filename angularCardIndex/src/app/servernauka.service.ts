@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Authors } from './service/Mthods/Author';
-import { update } from './service/Mthods/Update';
-import { Book } from './service/Mthods/Book';
-import { User } from './service/Mthods/User';
+import { Authors } from './model/Mthods/Author';
+import { update } from './model/Mthods/Update';
+import { Book } from './model/Mthods/Book';
+import { User } from './model/Mthods/User';
 
 
 @Injectable({
