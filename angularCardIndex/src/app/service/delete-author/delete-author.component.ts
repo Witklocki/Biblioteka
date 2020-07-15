@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServernaukaService } from 'src/app/servernauka.service';
-import { Authors } from 'src/app/service/Mthods/Author';
-import { Book } from 'src/app/service/Mthods/Book';
+import { Authors } from 'src/app/model/Mthods/Author';
+import { Book } from 'src/app/model/Mthods/Book';
 
 @Component({
   selector: 'app-delete-author',
@@ -18,24 +18,15 @@ export class DeleteAuthorComponent implements OnInit {
   constructor(private _servernaukaService:ServernaukaService) {  }
 
   ngOnInit() {
-
     this.authors.push(this._servernaukaService.getServeAll()
-    .subscribe(res =>{ 
-      console.log(res)
-      this.authors = res}))
-    
-     
-     console.log(this.authors);
+    .subscribe(res =>{this.authors = res}))
   }
 
   onDelete(id){
      this._servernaukaService.deleteServer(id)
-         .subscribe(data => {console.log("Deleted"), 
-          this.authors = this.authors.filter((element) =>
+         .subscribe(data => { this.authors = this.authors.filter((element) =>
           { return element.id !== id; })
-        },
-         error => console.log("error",error),
-         )
+        })
   }
 
 }

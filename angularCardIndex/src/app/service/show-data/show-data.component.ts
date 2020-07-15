@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ServernaukaService} from '../../servernauka.service';
+import { ServernaukaService } from '../../servernauka.service';
 
 @Component({
   selector: 'app-show-data',
@@ -12,8 +12,7 @@ export class ShowDataComponent implements OnInit {
 
   ngOnInit() {
     this.authors.push(this._servernaukaService.getServeAll()
-    .subscribe(res =>{ this.authors = res; console.log(res) } ) )
-     console.log(this.authors)
+    .subscribe(res =>{ this.authors = res}))
   }
 }
 

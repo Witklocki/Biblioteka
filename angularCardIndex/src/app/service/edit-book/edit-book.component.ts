@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ServernaukaService } from 'src/app/servernauka.service';
-import { Subscriber } from 'rxjs';
-import { Help } from 'src/app/service/Mthods/Help';
-import { Authors } from 'src/app/service/Mthods/Author';
-import { Book } from 'src/app/service/Mthods/Book';
+import { Help } from 'src/app/model/Mthods/Help';
+import { Authors } from 'src/app/model/Mthods/Author';
+import { Book } from 'src/app/model/Mthods/Book';
 
 @Component({
   selector: 'app-edit-book',
@@ -25,17 +24,14 @@ export class EditBookComponent implements OnInit {
 
   ngOnInit() {
     this.authors.push(this._servernaukaService.getServeAll()
-    .subscribe(res =>{ this.authors = res; console.log(res) } ) )
-     console.log(this.authors)
-     this.books.push(this._servernaukaService.getServerBook().subscribe(rep => {this.books=rep}))
+    .subscribe(res =>{ this.authors = res } ) )
+     this.books.push(this._servernaukaService.getServerBook()
+      .subscribe(rep => {this.books=rep}))
   }
   onChange(){
     this.id = Object.values(this.helpModel);
-    // console.log(this.helpModel)
-    // console.log(this.id)
-    // console.log(this.bookModel)
        this._servernaukaService.postSeverBook(this.bookModel, this.id)
-         .subscribe( data => console.log(data));
+         .subscribe();
         this.done=true;
        this.bookModel = new Book();
   }

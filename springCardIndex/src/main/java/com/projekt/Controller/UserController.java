@@ -29,8 +29,8 @@ public class UserController {
         Optional<UserTable> optionalUserTable = userRepository.findByName(name);
 
         if (optionalUserTable.isPresent()){
-            return new ResponseEntity(this.userRepository.findByName(name),HttpStatus.ACCEPTED);
-//            return ResponseEntity.noContent().build();
+            this.userRepository.findByName(name);
+            return ResponseEntity.noContent().build();
         }
         else {
             return ResponseEntity.noContent().build();
@@ -47,7 +47,8 @@ public class UserController {
         if (optionalUserTable.isPresent()) {
             this.userRepository.deleteById(id);
             return ResponseEntity.noContent().build();
-        } else {
+        }
+        else {
             return ResponseEntity.noContent().build();
         }
     }

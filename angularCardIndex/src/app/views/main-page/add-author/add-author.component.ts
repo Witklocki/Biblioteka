@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ServernaukaService} from '../../../servernauka.service';
-import { Authors } from "../../../service/Mthods/Author";
+import { ServernaukaService } from '../../../servernauka.service';
+import { Authors } from "../../../model/Mthods/Author";
 
 @Component({
   selector: 'app-add-author',
@@ -17,10 +17,7 @@ export class AddAuthorComponent implements OnInit {
   onSubmit() {
     this.done = false;
     this._servernaukaService.postServer(this.authorModel)
-    .subscribe(
-    data =>{console.log("Success", data)},
-    error => console.log("error",error)
-    )
+      .subscribe()
     this.authorModel = new Authors()
   }
 

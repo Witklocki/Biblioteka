@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ServernaukaService} from '../../servernauka.service';
-import { Help } from 'src/app/service/Mthods/Help';
-import { update } from 'src/app/service/Mthods/Update';
+import { ServernaukaService } from '../../servernauka.service';
+import { Help } from 'src/app/model/Mthods/Help';
+import { update } from 'src/app/model/Mthods/Update';
 
 
 @Component({
@@ -19,16 +19,13 @@ export class EditAuthorComponent implements OnInit {
 
   ngOnInit() {
     this.authors.push(this._servernaukaService.getServeAll()
-    .subscribe(res =>{ this.authors = res; console.log(res) } ) )
-     console.log(this.authors)
+      .subscribe(res =>{ this.authors = res} ) )
   }
   onPutAuthor(){
     this.done = false;
     this.id = Object.values(this.helpModel);
-    console.log(this.helpModel)
-    console.log(this.id)
      this._servernaukaService.putSever(this.id, this.updateModel )
-      .subscribe( data => console.log(data))
+        .subscribe()
       this.updateModel = new update();
   }
 }
