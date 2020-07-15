@@ -1,1 +1,40 @@
-<p>edit-book works!</p>
+<div class="bg-dark px-4 text-light"><br>
+    <form #userForm="ngForm" (ngSubmit)="onChange()" novalidate>
+        <div class="form-group d-inline p-2">
+            <label>
+                Author:<br> 
+                <select name="author" [(ngModel)]="helpModel.id" class="btn btn-light">
+                    <option value="0" >Choose Author</option>
+                    <option *ngFor="let author of authors" [ngValue]="author.id"> {{author.name}} {{author.surname}}  </option>
+                   
+                </select>
+            </label>     
+             <!-- <p>{{userForm.value | json}} </p> -->
+        </div>
+        <div class="form-group d-inline p-2">
+            <label>
+                Title:<br> 
+                <select name="id" [(ngModel)]="bookModel.id" class="btn btn-light">
+                    <option value="" >Choose Author</option>
+                    <option *ngFor="let book of books" [ngValue]="book.id"> {{book.bookName}} </option>
+                   
+                </select>
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                Title:
+            </label>
+            <input type="text" name="bookName" class="form-control" #name="ngModel"
+            placeholder="Title" [(ngModel)]="bookModel.bookName" required> 
+        </div>
+        
+        <button
+        type="submit" class="btn btn-primary" >Edit
+        </button>
+        <p *ngIf="done">
+            Changed
+        </p>
+    </form> 
+    <br><br>
+</div>

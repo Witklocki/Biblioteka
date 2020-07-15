@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditAuthorComponent } from './model/edit-author/edit-author.component';
 import { EditBookComponent } from './model/edit-book/edit-book.component';
 import { DeleteAuthorComponent } from './model/delete-author/delete-author.component';
+import { PageNotFoundComponent } from './views/main-page/page-not-found/page-not-found.component';
+import { DeleteBookComponent } from './model/delete-book/delete-book.component';
 
 
 
@@ -21,12 +23,6 @@ import { DeleteAuthorComponent } from './model/delete-author/delete-author.compo
   declarations: [
     AppComponent,
     routingComponent,
-    MainPageComponent,
-    AddAuthorComponent,
-    AddBookComponent,
-    EditAuthorComponent,
-    EditBookComponent,
-    DeleteAuthorComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit {
-
+ public user = "user";
+ public admin = "you have permition to admin tool"
+ public permition = false;
   constructor() { }
 
   ngOnInit() {

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ServernaukaService} from '../../servernauka.service';
 import { Help } from 'src/app/service/Mthods/Help';
-import { Authors } from 'src/app/service/Mthods/Author';
 import { update } from 'src/app/service/Mthods/Update';
 
 

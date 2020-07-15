@@ -30,8 +30,14 @@ export class ServernaukaService {
     console.log(id)
     return this._http.put(this._url+"/put/"+id, Update)
   }
+  getServerBook(){
+    return this._http.get<Book[]>(this._url+"/getAllBooks");
+  }
   postSeverBook(Book: Book, id){
     console.log(Book)
     return this._http.post<any>(this._url+"/createBook/"+id,Book)
+  }
+  deleteServerBook(id){
+    return this._http.delete(this._url+"/deleteBook/"+id,id)
   }
 }

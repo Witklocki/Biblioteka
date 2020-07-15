@@ -4,7 +4,7 @@
             <label>
                 Author:<br> 
                 <select name="id" [(ngModel)]="helpModel.id" class="btn btn-light">
-                    <option value="0" >Choose Author</option>
+                    <option value="" >Choose Author</option>
                     <option *ngFor="let author of authors" [ngValue]="author.id"> {{author.name}} {{author.surname}}  </option>
                    
                 </select>
@@ -16,14 +16,14 @@
                 New name
             </label>
             <input type="text" name="changeName" class="form-control" #name="ngModel"
-            placeholder="new name" [(ngModel)]="updateModel.name"> 
+            placeholder="New Name" [(ngModel)]="updateModel.name"> 
         </div>
         <div class="form-group">
             <label>
                 New surname
             </label>
             <input type="text" name="changeSurnme" class="form-control" #surname="ngModel"
-            placeholder="new surname" [(ngModel)]="updateModel.surname">
+            placeholder="New Surname" [(ngModel)]="updateModel.surname">
         </div>
                 <button
                 type="submit" class="btn btn-primary">Create
