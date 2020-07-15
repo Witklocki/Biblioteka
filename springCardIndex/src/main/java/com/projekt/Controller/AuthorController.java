@@ -13,10 +13,11 @@ import java.util.Optional;
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping
 @RestController
+//Formatowanie kodu
 public class AuthorController {
     private BookRepository bookRepository;
     private AuthorRepository authorRepository;
-    
+
     public AuthorController(AuthorRepository authorRepository, BookRepository bookRepository) {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
@@ -39,6 +40,7 @@ public class AuthorController {
     }
 /* Delete records by id */
     @DeleteMapping("/delete/{id}")
+//    ResponseEntity<co chcesz zwróci>
     public ResponseEntity delete(@PathVariable(value = "id") @RequestBody Long authorId){
         Optional<AuthorTable> optionalAuthorTable = authorRepository.findById(authorId);
 
@@ -47,6 +49,7 @@ public class AuthorController {
             return ResponseEntity.noContent().build();
         }
         else {
+//            new ResponseEntity<>() !
             return ResponseEntity.noContent().build();
         }
     }

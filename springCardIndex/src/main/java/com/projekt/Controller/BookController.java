@@ -14,6 +14,10 @@ import java.util.Optional;
 @RequestMapping
 @RestController
 public class BookController {
+
+    /*
+     * Controller -> Service -> ServiceImpl (implementacja serwisu) -> Repository -> Database
+     */
     private BookRepository bookRepository;
     private AuthorRepository authorRepository;
 

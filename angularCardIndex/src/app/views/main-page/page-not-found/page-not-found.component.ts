@@ -5,11 +5,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './page-not-found.component.html',
   styleUrls: ['./page-not-found.component.css']
 })
+// To ma być używane tylko w mainpagu ?
 export class PageNotFoundComponent implements OnInit {
 
   constructor() { }
   public error = "Page not found";
-  public text ="Use MENU bar on top of page "
+  public text = "Use MENU bar on top of page "
   ngOnInit() {
   }
 

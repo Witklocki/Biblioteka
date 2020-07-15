@@ -19,6 +19,7 @@ public class AuthorTable {
     private String name;
     private String surname;
 
+//    Doczytać o kaskadowości
     @OneToMany(mappedBy ="authorTable", cascade = CascadeType.ALL)
     @JsonManagedReference
     @OnDelete(action = OnDeleteAction.CASCADE)

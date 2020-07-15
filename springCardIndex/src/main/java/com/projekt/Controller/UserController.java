@@ -13,9 +13,12 @@ import java.util.Optional;
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping
-
+//Formatowanie
 public class UserController {
 
+    /*
+     * Controller -> Service -> ServiceImpl (implementacja serwisu) -> Repository -> Database
+     */
     private UserRepository userRepository;
     public UserController(UserRepository userRepository){
         this.userRepository = userRepository;

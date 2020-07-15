@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ServernaukaService} from '../../../servernauka.service';
+import { ServernaukaService } from '../../../servernauka.service';
 import { Authors } from "../../../service/Mthods/Author";
 
 @Component({
@@ -10,17 +10,18 @@ import { Authors } from "../../../service/Mthods/Author";
 export class AddAuthorComponent implements OnInit {
   authorModel = new Authors();
   done = true;
-  constructor(private _servernaukaService:ServernaukaService) { }
+  constructor(private _servernaukaService: ServernaukaService) { }
 
   ngOnInit() {
   }
   onSubmit() {
     this.done = false;
     this._servernaukaService.postServer(this.authorModel)
-    .subscribe(
-    data =>{console.log("Success", data)},
-    error => console.log("error",error)
-    )
+      .subscribe(
+        // tu chyba powinno być jakiś matSnackBar, toast ?
+        data => { console.log("Success", data) },
+        error => console.log("error", error)
+      )
     this.authorModel = new Authors()
   }
 
