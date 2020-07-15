@@ -9,7 +9,7 @@ import { User } from 'src/app/model/Mthods/User';
 })
 export class LoginComponent implements OnInit {
 
-  constructor( private _servernaukaService:ServernaukaService) { }
+  constructor( private serverNaukaService:ServernaukaService) { }
   userModel = new User();
   login= new User().name
   pass = new User().pass

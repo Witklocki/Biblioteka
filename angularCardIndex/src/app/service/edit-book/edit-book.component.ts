@@ -20,17 +20,17 @@ export class EditBookComponent implements OnInit {
   done = false;
 
 
-  constructor(private _servernaukaService:ServernaukaService ) { }
+  constructor(private serverNaukaService:ServernaukaService ) { }
 
   ngOnInit() {
-    this.authors.push(this._servernaukaService.getServeAll()
+    this.authors.push(this.serverNaukaService.getServeAll()
     .subscribe(res =>{ this.authors = res } ) )
-     this.books.push(this._servernaukaService.getServerBook()
+     this.books.push(this.serverNaukaService.getServerBook()
       .subscribe(rep => {this.books=rep}))
   }
   onChange(){
     this.id = Object.values(this.helpModel);
-       this._servernaukaService.postSeverBook(this.bookModel, this.id)
+       this.serverNaukaService.postSeverBook(this.bookModel, this.id)
          .subscribe();
         this.done=true;
        this.bookModel = new Book();

@@ -15,16 +15,16 @@ export class EditAuthorComponent implements OnInit {
   done = true;
   id;
   public authors = [];
-  constructor( private _servernaukaService:ServernaukaService) { }
+  constructor( private serverNaukaService:ServernaukaService) { }
 
   ngOnInit() {
-    this.authors.push(this._servernaukaService.getServeAll()
+    this.authors.push(this.serverNaukaService.getServeAll()
       .subscribe(res =>{ this.authors = res} ) )
   }
   onPutAuthor(){
     this.done = false;
     this.id = Object.values(this.helpModel);
-     this._servernaukaService.putSever(this.id, this.updateModel )
+     this.serverNaukaService.putSever(this.id, this.updateModel )
         .subscribe()
       this.updateModel = new update();
   }

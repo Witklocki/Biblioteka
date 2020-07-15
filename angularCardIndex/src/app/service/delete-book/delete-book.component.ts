@@ -12,14 +12,14 @@ export class DeleteBookComponent implements OnInit {
   books = [];
 
 
-  constructor( private _servernaukaService:ServernaukaService) { }
+  constructor( private serverNaukaService:ServernaukaService) { }
 
   ngOnInit() {
-    this.books.push(this._servernaukaService.getServerBook()
+    this.books.push(this.serverNaukaService.getServerBook()
     .subscribe(res =>this.books = res))
   }
   onDeleteBook(id){
-    this._servernaukaService.deleteServerBook(id)
+    this.serverNaukaService.deleteServerBook(id)
         .subscribe(data => {this.books = this.books.filter((element) =>
          { return element.id !== id; })
        }

@@ -15,15 +15,15 @@ export class DeleteAuthorComponent implements OnInit {
   public authors = [];
   public autho =[];
 
-  constructor(private _servernaukaService:ServernaukaService) {  }
+  constructor(private serverNaukaService:ServernaukaService) {  }
 
   ngOnInit() {
-    this.authors.push(this._servernaukaService.getServeAll()
+    this.authors.push(this.serverNaukaService.getServeAll()
     .subscribe(res =>{this.authors = res}))
   }
 
   onDelete(id){
-     this._servernaukaService.deleteServer(id)
+     this.serverNaukaService.deleteServer(id)
          .subscribe(data => { this.authors = this.authors.filter((element) =>
           { return element.id !== id; })
         })

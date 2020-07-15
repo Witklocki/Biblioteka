@@ -10,13 +10,13 @@ import { Authors } from "../../../model/Mthods/Author";
 export class AddAuthorComponent implements OnInit {
   authorModel = new Authors();
   done = true;
-  constructor(private _servernaukaService:ServernaukaService) { }
+  constructor(private serverNaukaService:ServernaukaService) { }
 
   ngOnInit() {
   }
   onSubmit() {
     this.done = false;
-    this._servernaukaService.postServer(this.authorModel)
+    this.serverNaukaService.postServer(this.authorModel)
       .subscribe(data=> {alert("Book Added")})
     this.authorModel = new Authors()
   }

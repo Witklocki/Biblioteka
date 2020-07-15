@@ -14,15 +14,15 @@ export class AddBookComponent implements OnInit {
   helpModel = new Help();
   id;
   public authors = [];
-  constructor( private _servernaukaService:ServernaukaService) { }
+  constructor( private serverNaukaService:ServernaukaService) { }
 
   ngOnInit() {
-    this.authors.push(this._servernaukaService.getServeAll()
+    this.authors.push(this.serverNaukaService.getServeAll()
     .subscribe(res =>{ this.authors = res}))
   }
   onBook(){
     this.id = Object.values(this.helpModel);
-     this._servernaukaService.postSeverBook(this.bookModel, this.id)
+     this.serverNaukaService.postSeverBook(this.bookModel, this.id)
       .subscribe(data=> {alert("Book Added")})
       this.bookModel = new Book();
   }

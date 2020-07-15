@@ -8,10 +8,10 @@ import { ServernaukaService } from '../../servernauka.service';
 })
 export class ShowDataComponent implements OnInit {
   public authors = [];
-  constructor(private _servernaukaService:ServernaukaService) { }
+  constructor(private serverNaukaService:ServernaukaService) { }
 
   ngOnInit() {
-    this.authors.push(this._servernaukaService.getServeAll()
+    this.authors.push(this.serverNaukaService.getServeAll()
     .subscribe(res =>{ this.authors = res}))
   }
 }
