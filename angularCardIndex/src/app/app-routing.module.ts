@@ -9,6 +9,7 @@ import {EditBookComponent} from "./model/edit-book/edit-book.component";
 import {DeleteAuthorComponent} from "./model/delete-author/delete-author.component";
 import {PageNotFoundComponent} from "./views/main-page/page-not-found/page-not-found.component"
 import { DeleteBookComponent } from './model/delete-book/delete-book.component';
+import {LoginComponent } from "./views/general/login/login.component"
 
 const routes: Routes = [
   {path:'show-data', component: ShowDataComponent },
@@ -19,7 +20,7 @@ const routes: Routes = [
   {path:'edit-book', component: EditBookComponent},
   {path:'delete-author', component: DeleteAuthorComponent},
   {path:'delete-book', component: DeleteBookComponent},
-
+  {path: 'login', component: LoginComponent},
 
    { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
 ];
@@ -30,4 +31,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const routingComponent = [ ShowDataComponent, AddAuthorComponent, AddBookComponent,
-   MainPageComponent,EditAuthorComponent,EditBookComponent,DeleteAuthorComponent, PageNotFoundComponent,DeleteBookComponent  ]
+   MainPageComponent,EditAuthorComponent,EditBookComponent,DeleteAuthorComponent, PageNotFoundComponent,DeleteBookComponent,LoginComponent  ]

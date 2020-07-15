@@ -4,6 +4,7 @@ import { Authors } from './service/Mthods/Author';
 import { Observable } from 'rxjs';
 import { update } from './service/Mthods/Update';
 import { Book } from './service/Mthods/Book';
+import { User } from './service/Mthods/User';
 
 
 @Injectable({
@@ -39,5 +40,14 @@ export class ServernaukaService {
   }
   deleteServerBook(id){
     return this._http.delete(this._url+"/deleteBook/"+id,id)
+  }
+  getUserLogin(name){
+    return this._http.get(this._url+"/getUser/"+name)
+  }
+  getUsers(){
+    return this._http.get<User[]>(this._url+"/getAllUsers")
+  }
+  deleteUser(id){
+    return this._http.delete(this._url+"/deleteUser/"+id,id)
   }
 }
