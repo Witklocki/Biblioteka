@@ -6,15 +6,7 @@ import { AppComponent } from './app.component';
 import {ServernaukaService} from './servernauka.service';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { MainPageComponent } from './views/main-page/main-page.component';
-import { AddAuthorComponent } from './views/main-page/add-author/add-author.component';
-import { AddBookComponent } from './views/main-page/add-book/add-book.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { EditAuthorComponent } from './model/edit-author/edit-author.component';
-import { EditBookComponent } from './model/edit-book/edit-book.component';
-import { DeleteAuthorComponent } from './model/delete-author/delete-author.component';
-import { PageNotFoundComponent } from './views/main-page/page-not-found/page-not-found.component';
-import { DeleteBookComponent } from './model/delete-book/delete-book.component';
 
 
 
@@ -30,6 +22,7 @@ import { DeleteBookComponent } from './model/delete-book/delete-book.component';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    
     
   ],
   providers: [ServernaukaService],

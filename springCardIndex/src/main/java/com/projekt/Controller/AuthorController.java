@@ -21,7 +21,7 @@ public class AuthorController {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
     }
-/* Update record */
+/* Create record */
     @PostMapping("/create")
     public ResponseEntity post(@RequestBody AuthorTable authorTable, BookTable bookTable){
         bookTable.setAuthorTable(authorTable);
@@ -30,8 +30,6 @@ public class AuthorController {
 /* Find record by id */
     @GetMapping("/get/{id}")
     public ResponseEntity getAuthors (@PathVariable(value = "id") @RequestBody Long authorId){
-
-        System.out.print(authorId);
         return new ResponseEntity(this.authorRepository.findById(authorId),HttpStatus.ACCEPTED);
     }
 /* Find all records */
