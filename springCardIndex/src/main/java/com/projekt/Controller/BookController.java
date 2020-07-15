@@ -63,9 +63,15 @@ public class BookController {
         }
     }
 /* Update records */
-    @PutMapping("/putBook")
-    public ResponseEntity<BookTable> updateAuthor(@RequestBody BookTable bookTable, AuthorTable authorTable){
-        bookTable.getAuthorTable(authorTable);
-        return ResponseEntity.ok(this.bookRepository.save(bookTable));
+    @PutMapping("/putBook/{id}")
+    public ResponseEntity<Object> updateAuthor(@PathVariable Long id, @RequestBody BookTable bookTable, AuthorTable authorTable ) {
+        Optional<AuthorTable> optionalAuthorTable = authorRepository.findById(id);
+        if (optionalAuthorTable.isPresent()) {
+            bookTable.setAuthorTable(authorTable);
+            return new ResponseEntity(this.bookRepository.save(bookTable), HttpStatus.ACCEPTED);
+        } else {
+
+            return ResponseEntity.noContent().build();
+        }
     }
 }
