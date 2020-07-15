@@ -7,6 +7,7 @@ import {ServernaukaService} from './servernauka.service';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavigationComponent } from './views/general/navigation/navigation.component';
 
 
 
@@ -15,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     routingComponent,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,
