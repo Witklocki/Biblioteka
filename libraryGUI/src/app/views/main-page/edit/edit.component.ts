@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthorService } from 'src/app/service/author.service';
-import { BookService } from 'src/app/service/book.service';
 
 @Component({
   selector: 'app-edit',

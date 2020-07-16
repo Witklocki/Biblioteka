@@ -14,7 +14,6 @@ import { EditComponent } from './views/main-page/edit/edit.component';
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
