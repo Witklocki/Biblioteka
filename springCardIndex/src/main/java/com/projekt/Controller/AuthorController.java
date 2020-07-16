@@ -39,7 +39,7 @@ public class AuthorController {
     }
 /* Delete records by id */
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity delete(@PathVariable(value = "id") @RequestBody Long authorId){
+    public ResponseEntity<Object> delete(@PathVariable(value = "id") @RequestBody Long authorId){
         Optional<AuthorTable> optionalAuthorTable = authorRepository.findById(authorId);
 
         if (optionalAuthorTable.isPresent()){
@@ -47,6 +47,7 @@ public class AuthorController {
             return ResponseEntity.noContent().build();
         }
         else {
+            new ResponseEntity<String>("No object with this id",HttpStatus.BAD_REQUEST)
             return ResponseEntity.noContent().build();
         }
     }
@@ -59,7 +60,7 @@ public class AuthorController {
                 return new ResponseEntity(this.authorRepository.save(authorTable), HttpStatus.ACCEPTED);
             }
             else {
-
+                new ResponseEntity<String>("No object with this id",HttpStatus.BAD_REQUEST)
                 return ResponseEntity.noContent().build();
             }
     }
