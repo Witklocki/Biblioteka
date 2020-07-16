@@ -1,0 +1,34 @@
+<div class="bg-dark px-4 text-light"><br>
+    <form #userForm="ngForm" (ngSubmit)="onPutAuthor()" novalidate>
+        <div class="form-group">
+            <label>
+                Author:<br> 
+                <select name="id" [(ngModel)]="id" class="btn btn-light">
+                    <option value="" >Choose Author</option>
+                    <option *ngFor="let author of authors" [ngValue]="author.id"> {{author.name}} {{author.surname}}  </option>
+                   
+                </select>
+            </label>
+             <!-- <p>{{userForm.value | json}} </p> -->
+        </div>
+        <div class="form-group">
+            <label>
+                New name
+            </label>
+            <input type="text" name="changeName" class="form-control" #name="ngModel"
+            placeholder="New Name" [(ngModel)]="authorModel.name" required> 
+        </div>
+        <div class="form-group">
+            <label>
+                New surname
+            </label>
+            <input type="text" name="changeSurnme" class="form-control" #surname="ngModel"
+            placeholder="New Surname" [(ngModel)]="authorModel.surname" required>
+        </div>
+                <button *ngIf="name.valid && surname.valid"
+                type="submit" class="btn btn-primary">Change
+                </button> 
+        <p *ngIf="done">Author Changed</p>
+    </form> 
+    <br><br>
+</div>

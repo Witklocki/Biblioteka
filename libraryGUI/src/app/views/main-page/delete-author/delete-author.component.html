@@ -1,0 +1,28 @@
+<br><br><br>
+<table class="col-10 table table-dark m-auto ">
+    <thead>
+        <th scope="col-2" >Name</th>
+        <th scope="col-2">Surname</th>
+        <th scope="col-2" >Books</th>
+    </thead>
+    <tbody *ngFor="let author of authors">
+        <td>
+            {{author.name}}
+        </td>
+        <td>
+            {{author.surname}}
+        </td>
+        <td>
+            <ul *ngFor="let bookTable of author.bookTable">
+                {{bookTable.bookName}}
+            </ul>
+        </td>
+        <td class="text-center">
+            <form (ngSubmit)="onDelete(author.id)">
+                <button type="submit" class="bg-danger btn col-8" name="id">
+                    Delete </button>
+            </form>
+            
+        </td>
+    </tbody>
+</table>

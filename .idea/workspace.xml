@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a93fb400-b572-418f-998b-9d062ecd8162" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/browserslist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/e2e/protractor.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/e2e/src/app.e2e-spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/e2e/src/app.po.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/e2e/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/model/Mthods/Author.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/model/Mthods/Book.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/model/Mthods/Help.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/model/Mthods/Update.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/model/Mthods/User.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/servernauka.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/servernauka.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/service/delete-author/delete-author.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/service/delete-author/delete-author.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/service/delete-author/delete-author.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/service/delete-author/delete-author.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/service/delete-book/delete-book.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/service/delete-book/delete-book.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/service/delete-book/delete-book.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/service/delete-book/delete-book.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/service/edit-author/edit-author.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/service/edit-author/edit-author.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/service/edit-author/edit-author.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/service/edit-author/edit-author.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/service/edit-book/edit-book.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/service/edit-book/edit-book.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/service/edit-book/edit-book.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/service/edit-book/edit-book.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/service/show-data/show-data.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/service/show-data/show-data.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/service/show-data/show-data.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/service/show-data/show-data.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/general/login/login.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/general/login/login.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/general/login/login.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/general/login/login.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/general/navigation/navigation.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/general/navigation/navigation.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/general/navigation/navigation.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/general/navigation/navigation.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/main-page/add-author/add-author.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/main-page/add-author/add-author.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/main-page/add-author/add-author.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/main-page/add-author/add-author.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/main-page/add-book/add-book.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/main-page/add-book/add-book.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/main-page/add-book/add-book.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/main-page/add-book/add-book.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/main-page/main-page.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/main-page/main-page.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/main-page/main-page.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/main-page/main-page.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/main-page/page-not-found/page-not-found.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/main-page/page-not-found/page-not-found.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/main-page/page-not-found/page-not-found.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/app/views/main-page/page-not-found/page-not-found.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularCardIndex/tslint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCardIndex/src/main/java/com/projekt/Controller/AuthorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/springCardIndex/src/main/java/com/projekt/Controller/AuthorController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1eksk9VRtAc9HEJOdbHfqENhsAO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/springCardIndex" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a93fb400-b572-418f-998b-9d062ecd8162" name="Default Changelist" comment="" />
+      <created>1594877065710</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594877065710</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="620" y="260" key="FileChooserDialogImpl" timestamp="1594877114077">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="620" y="260" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1594877114077" />
+  </component>
+</project>
