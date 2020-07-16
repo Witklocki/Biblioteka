@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './page-not-found.component.html',
   styleUrls: ['./page-not-found.component.css']
 })
-// To ma być używane tylko w mainpagu ?
+//  to do general, to pewnie będziesz chciał wykorzystać w wielu miejsach apki nie tylko przy mainpagu ;)
 export class PageNotFoundComponent implements OnInit {
 
   constructor() { }

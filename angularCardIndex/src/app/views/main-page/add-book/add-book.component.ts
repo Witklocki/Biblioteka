@@ -10,6 +10,13 @@ import { Help } from 'src/app/model/Mthods/Help';
   styleUrls: ['./add-book.component.css']
 })
 export class AddBookComponent implements OnInit {
+  // Pola prywatne, enkapsulacja danych (https://refactoring.guru/pl/encapsulate-field)
+  // Do zastosowania w całej apce!
+  // Pola prywatne na zasadzie
+  // private _bookModel: Book = new Book();
+  // Typowania!!! Typescript to nie js, używamy typów danych
+  // : Book ? 
+  // : Help ?
   bookModel = new Book();
   helpModel = new Help();
   id;

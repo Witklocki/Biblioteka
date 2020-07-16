@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+
+//Odowłania do serwisów nie do repo !!
+// Controller -> Service -> Implementacja serwisu -> Repozytorium
+// Wrzuciłeś kod który się nie kompiluje!
+
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping
 @RestController
@@ -24,6 +29,7 @@ public class AuthorController {
     }
 /* Create record */
     @PostMapping("/create")
+//    ResponseEntity<OBIEKT> - podajesz typ zwracany a nie żeby zwracał co chce to nie jest js :D
     public ResponseEntity post(@RequestBody AuthorTable authorTable, BookTable bookTable){
         bookTable.setAuthorTable(authorTable);
         return new ResponseEntity(this.authorRepository.save(authorTable), HttpStatus.ACCEPTED);

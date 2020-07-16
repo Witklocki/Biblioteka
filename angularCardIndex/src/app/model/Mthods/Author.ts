@@ -1,9 +1,10 @@
 import { Book } from './Book';
 
-export class Authors{
-    
-    id:number;
-    name:string;
-    surname:string;
+//  bez folderu methods :)
+export class Authors {
+
+    id: number;
+    name: string;
+    surname: string;
     bookTable: Book
-    }
+}
