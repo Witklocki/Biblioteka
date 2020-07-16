@@ -32,4 +32,5 @@ import { EditComponent } from './views/main-page/edit/edit.component';
   providers: [AuthorService, BookService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
