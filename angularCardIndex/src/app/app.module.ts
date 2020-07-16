@@ -9,9 +9,6 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavigationComponent } from './views/general/navigation/navigation.component';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,8 +21,8 @@ import { NavigationComponent } from './views/general/navigation/navigation.compo
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    
-    
+
+
   ],
   providers: [ServernaukaService],
   bootstrap: [AppComponent]

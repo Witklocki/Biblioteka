@@ -1,3 +1,4 @@
-export class Help{
-    id:string
+//  co to jest ?
+export class Help {
+    id: string
 }
