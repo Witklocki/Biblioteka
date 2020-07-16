@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServernaukaService } from '../../../servernauka.service';
-import { Book } from "../../../service/Mthods/Book";
-import { Help } from 'src/app/service/Mthods/Help';
+import { Book } from "src/app//model/Mthods/Book";
+import { Help } from 'src/app/model/Mthods/Help';
 
 
 @Component({
@@ -14,20 +14,16 @@ export class AddBookComponent implements OnInit {
   helpModel = new Help();
   id;
   public authors = [];
-  constructor(private _servernaukaService: ServernaukaService) { }
+  constructor(private serverNaukaService: ServernaukaService) { }
 
   ngOnInit() {
-    // co to
-    this.authors.push(this._servernaukaService.getServeAll()
-      .subscribe(res => { this.authors = res; console.log(res) }))
-    console.log(this.authors)
+    this.authors.push(this.serverNaukaService.getServeAll()
+      .subscribe(res => { this.authors = res }))
   }
   onBook() {
     this.id = Object.values(this.helpModel);
-    console.log(this.helpModel)
-    console.log(this.id)
-    this._servernaukaService.postSeverBook(this.bookModel, this.id)
-      .subscribe(data => console.log(data))
+    this.serverNaukaService.postSeverBook(this.bookModel, this.id)
+      .subscribe(data => { alert("Book Added") })
     this.bookModel = new Book();
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServernaukaService } from 'src/app/servernauka.service';
-import { User } from 'src/app/service/Mthods/User';
+import { User } from 'src/app/model/Mthods/User';
 
 @Component({
   selector: 'app-login',
@@ -9,14 +9,13 @@ import { User } from 'src/app/service/Mthods/User';
 })
 export class LoginComponent implements OnInit {
 
-  constructor( private _servernaukaService:ServernaukaService) { }
+  constructor( private serverNaukaService:ServernaukaService) { }
   userModel = new User();
   login= new User().name
   pass = new User().pass
   ngOnInit() {
   }
-  onLogin(){
-    console.log(this.login, this.pass)
+  onLogin(){    
   
   }
 }

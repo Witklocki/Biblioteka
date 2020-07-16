@@ -41,7 +41,8 @@ public class BookController {
         else {
 
             return ResponseEntity.noContent().build();
-        }}
+        }
+    }
 
 /* Find record by id */
     @GetMapping("/getBook/{id}")
