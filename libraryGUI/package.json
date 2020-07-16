@@ -1,5 +1,5 @@
 {
-  "name": "practice",
+  "name": "library-gui",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -11,21 +11,14 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^8.2.14",
-    "@angular/cdk": "^10.0.2",
+    "@angular/animations": "~8.2.14",
     "@angular/common": "~8.2.14",
     "@angular/compiler": "~8.2.14",
     "@angular/core": "~8.2.14",
     "@angular/forms": "~8.2.14",
-    "@angular/material": "^10.0.2",
-    "@angular/platform-browser": "^8.2.14",
+    "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
-    "@material/select": "^7.0.0",
-    "bootstrap": "^4.5.0",
-    "material": "^0.4.3",
-    "ngx-mat-select-search": "^3.0.1",
-    "ngx-toastr": "^13.0.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
