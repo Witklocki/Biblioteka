@@ -19,8 +19,10 @@
                 </ul>
             </td>
             <td>
-                <button class="btn btn-danger" (click)="onDelete(author.id)"> Delete </button>
-                <button class="btn btn-warning" (click)="onChange(author.id)"> change </button>
+                <ul><button class="btn btn-danger" (click)="onDelete(author.id)"> Delete </button>&nbsp;
+                <button class="btn btn-warning" (click)="onChange(author.id)"> change </button></ul>
+                <ul><button class="btn btn-success" (click)="addBook(author.id)"> Add Book </button></ul>
+                <ul><button routerLink="/delete-book"class=" btn btn-light"> Books </button></ul>
             </td>
         </tbody>
     </table>

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Book } from "src/app/model/Book";
 import { Authors } from 'src/app/model/Author';
 import { BookService } from 'src/app/service/book.service';
 import { AuthorService } from 'src/app/service/author.service';
+import { MAT_DIALOG_DATA } from '@angular/material';
 
 
 @Component({
@@ -13,15 +14,15 @@ import { AuthorService } from 'src/app/service/author.service';
 export class AddBookComponent implements OnInit {
   private authors = [];
   private bookModel : Book = new Book()
-  private id = new Authors().id;
-  constructor( private bookService:BookService, private authorSevice: AuthorService) { }
+  private id;
+  constructor( private bookService:BookService,@Inject(MAT_DIALOG_DATA)public response:any) { }
 
   ngOnInit() {
-    this.authors.push(this.authorSevice.getServeAll().subscribe(res =>{ this.authors = res}))
   }
   onBook(){
+      this.id = this.response
       this.bookService.postSeverBook(this.bookModel, this.id)
-       .subscribe(data=> {alert("Book Added")})
+       .subscribe()
        this.bookModel = new Book();
   }
 }

@@ -3,6 +3,7 @@ import { AuthorService } from 'src/app/service/author.service';
 import { MatDialog } from '@angular/material';
 import { EditAuthorComponent } from '../edit-author/edit-author.component';
 import { CheckComponent } from '../../general/check/check.component';
+import { AddBookComponent } from '../add-book/add-book.component';
 
 @Component({
   selector: 'app-show-data',
@@ -39,5 +40,12 @@ export class ShowDataComponent implements OnInit {
     .subscribe(res =>{ this.authors = res}))
     })
   }
-}
+  addBook(id){
+    this.info = this.dialog.open(AddBookComponent,{data:id});
+     this.info.afterClosed().subscribe(result => {
+      this.authors.push(this.authorServer.getServeAll()
+    .subscribe(res =>{ this.authors = res}))
+    })
+  }
+}0
 
