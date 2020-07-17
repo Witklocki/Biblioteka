@@ -15,6 +15,9 @@ export class AuthorService {
   getServeAll(){
     return this.http.get<Authors[]>(this.url);
   }
+  getAuthor(id){
+    return this.http.get<Authors[]>(this.url+"/get/"+id)
+  }
   postServer(Author: Authors){
     return this.http.post<any>(this.url+"/create", Author)
   }

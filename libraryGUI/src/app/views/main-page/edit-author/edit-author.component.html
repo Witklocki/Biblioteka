@@ -1,6 +1,6 @@
-<div class="bg-dark px-4 text-light"><br>
+<div><br>
     <form #userForm="ngForm" (ngSubmit)="onPutAuthor()" novalidate>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label>
                 Author:<br> 
                 <select name="id" [(ngModel)]="id" class="btn btn-light">
@@ -9,8 +9,8 @@
                    
                 </select>
             </label>
-             <!-- <p>{{userForm.value | json}} </p> -->
-        </div>
+             <p>{{userForm.value | json}} </p>
+        </div> -->
         <div class="form-group">
             <label>
                 New name
@@ -25,10 +25,10 @@
             <input type="text" name="changeSurnme" class="form-control" #surname="ngModel"
             placeholder="New Surname" [(ngModel)]="authorModel.surname" required>
         </div>
-                <button *ngIf="name.valid && surname.valid"
+                <button mat-button mat-raised-button mat-dialog-close *ngIf="name.valid && surname.valid"
                 type="submit" class="btn btn-primary">Change
-                </button> 
-        <p *ngIf="done">Author Changed</p>
+                </button>
+                <button mat-button mat-raised-button mat-dialog-close class="btn btn-success"> Just forget</button>
     </form> 
     <br><br>
 </div>

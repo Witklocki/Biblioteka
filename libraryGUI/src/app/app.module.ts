@@ -9,7 +9,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavigationComponent } from './views/general/navigation/navigation.component';
 import { AuthorService } from './service/author.service';
 import { BookService } from './service/book.service';
-import { EditComponent } from './views/main-page/edit/edit.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { CheckComponent } from './views/general/check/check.component';
 
 
 
@@ -18,14 +20,16 @@ import { EditComponent } from './views/main-page/edit/edit.component';
     AppComponent,
     routingComponent,
     NavigationComponent,
-    EditComponent,
+    CheckComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule,    
+    BrowserAnimationsModule, 
+    MatDialogModule, 
+    MatButtonModule,
   ],
   providers: [AuthorService, BookService],
   bootstrap: [AppComponent]

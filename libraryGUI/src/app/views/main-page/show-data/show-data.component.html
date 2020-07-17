@@ -18,6 +18,10 @@
                     {{bookTable.bookName}}
                 </ul>
             </td>
+            <td>
+                <button class="btn btn-danger" (click)="onDelete(author.id)"> Delete </button>
+                <button class="btn btn-warning" (click)="onChange(author.id)"> change </button>
+            </td>
         </tbody>
     </table>
     

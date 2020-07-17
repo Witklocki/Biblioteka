@@ -1,7 +1,8 @@
-import { Component, OnInit, OnChanges, DoCheck } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Authors } from 'src/app/model/Author';
 import { AuthorService } from 'src/app/service/author.service';
-
+import { MAT_DIALOG_DATA } from '@angular/material'
+ 
 
 @Component({
   selector: 'app-edit-author',
@@ -11,22 +12,15 @@ import { AuthorService } from 'src/app/service/author.service';
 export class EditAuthorComponent implements OnInit{
   private authorModel: Authors = new Authors();
   private authors = [];
-  private id = new Authors().id
-  constructor( private authoService:AuthorService ) { }
+  private id;
+
+  constructor( private authoService:AuthorService, @Inject(MAT_DIALOG_DATA)public response:any) { }
   ngOnInit(){
     this.authors.push(this.authoService.getServeAll().subscribe(data =>{ this.authors = data }))
   }
-
-  // ngDoCheck(){
-  //   this.authors.push(this.authoService.getServeAll().subscribe(data =>{ 
-  //     if(this.authors !== data){  
-  //     this.authors = data }
-  //     else{
-  //       this.authors = this.authors;
-  //     }
-  //   }))
-  // }
+  
    onPutAuthor(){
+     this.id = this.response
       this.authoService.putSever(this.id, this.authorModel )
          .subscribe()
        this.authorModel = new Authors();

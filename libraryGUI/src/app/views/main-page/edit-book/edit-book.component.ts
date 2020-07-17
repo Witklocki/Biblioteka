@@ -3,7 +3,6 @@ import { Authors } from 'src/app/model/Author';
 import { Book } from 'src/app/model/Book';
 import { BookService } from 'src/app/service/book.service';
 import { AuthorService } from 'src/app/service/author.service';
-import { error } from 'console';
 
 @Component({
   selector: 'app-edit-book',
@@ -27,10 +26,7 @@ export class EditBookComponent implements OnInit {
   }
   onChange(){
         this.bookService.postSeverBook(this.bookModel, this.id)
-          .subscribe((response) =>{
-            console.log("er")
-          },
-          (error) => console.log(error))
+          .subscribe()
          this.done=true;
         this.bookModel = new Book();
         

@@ -6,11 +6,11 @@ import { AddBookComponent } from "./views/main-page/add-book/add-book.component"
 import { MainPageComponent } from "./views/main-page/main-page.component";
 import { EditAuthorComponent } from "./views/main-page/edit-author/edit-author.component";
 import { EditBookComponent } from "./views/main-page/edit-book/edit-book.component";
-import { DeleteAuthorComponent } from "./views/main-page/delete-author/delete-author.component";
 import { PageNotFoundComponent } from "./views/general/page-not-found/page-not-found.component";
 import { DeleteBookComponent } from './views/main-page/delete-book/delete-book.component';
 import { LoginComponent } from "./views/general/login/login.component";
-import { EditComponent } from "./views/main-page/edit/edit.component"
+import { CheckComponent } from './views/general/check/check.component';
+
 
 const routes: Routes = [
   {path:'show-data', component: ShowDataComponent },
@@ -19,10 +19,9 @@ const routes: Routes = [
   {path:'', component: MainPageComponent },
   {path:'edit-author', component: EditAuthorComponent },
   {path:'edit-book', component: EditBookComponent },
-  {path:'delete-author', component: DeleteAuthorComponent },
   {path:'delete-book', component: DeleteBookComponent },
   {path: 'login', component: LoginComponent },
-  {path: 'edit', component: EditComponent },
+  {path: 'check', component: CheckComponent },
 
    { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
 ];
@@ -33,6 +32,6 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 // export wszyskich elementów używanych przez rooting
-export const routingComponent = [ ShowDataComponent, AddAuthorComponent, AddBookComponent,EditComponent, 
-   MainPageComponent,EditAuthorComponent,EditBookComponent,DeleteAuthorComponent, PageNotFoundComponent,DeleteBookComponent, 
-   LoginComponent  ]
+export const routingComponent = [ ShowDataComponent, AddAuthorComponent, AddBookComponent, 
+   MainPageComponent,EditAuthorComponent,EditBookComponent, PageNotFoundComponent,DeleteBookComponent, 
+   LoginComponent,CheckComponent  ]
