@@ -13,7 +13,6 @@ import { EditComponent } from './views/main-page/edit/edit.component';
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,8 +25,7 @@ import { EditComponent } from './views/main-page/edit/edit.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
-    
+    BrowserAnimationsModule,    
   ],
   providers: [AuthorService, BookService],
   bootstrap: [AppComponent]
