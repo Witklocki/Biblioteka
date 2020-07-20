@@ -23,4 +23,8 @@ export class BookService {
   putSeverBook(id, Book:Book){
     return this.http.put(this.url+"putBook/"+id,Book)
   }
+  getServiceBookId(id){
+    return this.http.get<Book[]>(this.url+"/getBook/"+id)
+
+  }
 }

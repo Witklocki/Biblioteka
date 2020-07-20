@@ -22,6 +22,9 @@ export class DeleteBookComponent implements OnInit {
   change(id){
     this.books = this.books.filter((element)=>{return element.id !== id})
   }
+  comper(a,b){
+    return a.id-b.id
+  }
 
   ngOnInit() {
     this.books.push(this.bookService.getServerBook().subscribe(data =>{this.books = data}))
@@ -38,7 +41,7 @@ export class DeleteBookComponent implements OnInit {
     this.info = this.dialog.open(EditBookComponent,{data:id});
      this.info.afterClosed().subscribe(result => {
       this.books.push(this.bookService.getServerBook()
-    .subscribe(res =>{ this.books = res}))
+    .subscribe(res =>{ this.books = res.sort(this.comper)}))
     })
 }
 

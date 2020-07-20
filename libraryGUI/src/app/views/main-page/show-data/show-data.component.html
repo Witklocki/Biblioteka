@@ -1,14 +1,13 @@
-<div>
+<div class="m-auto col-10">
     <p>{{test}}</p>
-    <table class="col-sm-12 table table-dark">
+    <table class="col-12 table table-dark">
         <thead>
-            <th scope="col-3" >Name</th>
-            <th scope="col-3">Surname</th>
-            <th scope="col-5" >Books</th>
-            <th scope="col-1">  <button routerLink="/delete-book"class=" btn btn-light"> Books Table </button></th>
+            <th scope="col" >Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col" >Books</th>
         </thead>
         <tbody *ngFor="let author of authors">
-            <td>
+            <td> 
                 {{author.name}}
             </td>
             <td>
@@ -19,12 +18,12 @@
                     {{bookTable.bookName}}
                 </ul>
             </td>
-            <td>
-                <ul><button class="btn btn-danger" (click)="onDelete(author.id)"> Delete </button>&nbsp;
-                <button class="btn btn-warning" (click)="onChange(author.id)"> Change </button></ul>
-                <ul><button class="btn btn-success" (click)="addBook(author.id)"> Add Book </button></ul>
+            <td>                
+                <ul><button class="btn col-12 color" (click)="addBook(author.id)"> <h6>Add Book</h6> </button></ul>
+                <ul><button class="btn col-12 color" (click)="onChange(author.id)"> <h6>Change</h6> </button></ul>
+                <ul><button class="btn col-12 color" (click)="onDelete(author.id)"> <h6>Delete</h6> </button></ul>
             </td>
         </tbody>
     </table>
-    
+    <button class="btn btn-dark h-3 col-12" routerLink="/add-author"> <h3>Add Author</h3> </button>
 </div>

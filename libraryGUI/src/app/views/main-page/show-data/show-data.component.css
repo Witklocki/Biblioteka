@@ -1,0 +1,7 @@
+.color{
+    background-color: #e3e6e9;
+}
+.color:hover{
+    background-color: #6f7275;
+    color: white;
+}

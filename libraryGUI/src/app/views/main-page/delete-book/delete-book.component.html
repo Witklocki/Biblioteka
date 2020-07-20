@@ -9,10 +9,8 @@
             {{book.bookName}}
         </td>
         <td class="text-center">
-            <ul> 
-                <button class="btn btn-warning " (click)="onChange(book.id)"> Edit Tittle </button> &nbsp;
-                <button type="submit" class="bg-danger btn " (click)="onDeleteBook(book.id)">Delete </button>
-        </ul>
+            <ul><button class="btn color col-5" (click)="onChange(book.id)"> <h6>Edit Tittle</h6> </button>&nbsp;
+            <button class="btn color col-5" (click)="onDeleteBook(book.id)"> <h6>Delete</h6> </button></ul>
         </td>
     </tbody>
 </table>

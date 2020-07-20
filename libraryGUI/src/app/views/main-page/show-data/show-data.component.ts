@@ -20,6 +20,10 @@ export class ShowDataComponent implements OnInit {
   change(id){
     this.authors = this.authors.filter((element)=>{return element.id !== id})
   }
+  comper(a,b){
+    return a.id-b.id
+  }
+    
 
   ngOnInit() {
     this.authors.push(this.authorServer.getServeAll()
@@ -37,7 +41,7 @@ export class ShowDataComponent implements OnInit {
     this.info = this.dialog.open(EditAuthorComponent,{data:id});
      this.info.afterClosed().subscribe(result => {
       this.authors.push(this.authorServer.getServeAll()
-    .subscribe(res =>{ this.authors = res}))
+    .subscribe(res =>{ this.authors = res.sort(this.comper)}))
     })
   }
   addBook(id){
