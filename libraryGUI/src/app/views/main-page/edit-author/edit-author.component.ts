@@ -11,16 +11,15 @@ import { MAT_DIALOG_DATA } from '@angular/material'
 })
 export class EditAuthorComponent implements OnInit{
   private authorModel: Authors = new Authors();
-  private authors = [];
-  private id;
+  private author;
+  private id = this.response
 
   constructor( private authoService:AuthorService, @Inject(MAT_DIALOG_DATA)public response:any) { }
   ngOnInit(){
-    this.authors.push(this.authoService.getServeAll().subscribe(data =>{ this.authors = data }))
+    this.author = this.authoService.getAuthor(this.id).subscribe(data => this.author = data)
   }
   
    onPutAuthor(){
-     this.id = this.response
       this.authoService.putSever(this.id, this.authorModel )
          .subscribe()
        this.authorModel = new Authors();

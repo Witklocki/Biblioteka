@@ -15,12 +15,12 @@
             <input type="text" name="AuthorSurname" class="form-control" #surname="ngModel"
             placeholder="Surname" [(ngModel)]="authorModel.surname" required>
         </div>
-        <div class="form-group">
+        <div class="form-group" *ngIf="name.valid && surname.valid">
             <label>
                 Title
             </label>
             <input type="text" name="bookName" class="form-control" #bookName="ngModel"
-            placeholder="Name" [(ngModel)]="book.bookName" value="bookName"> 
+            placeholder="Name" [(ngModel)]="book.bookName" ngValue="bookName" > 
         </div>
                 <button *ngIf="name.valid && surname.valid" 
                 type="submit" class="btn btn-primary">Create

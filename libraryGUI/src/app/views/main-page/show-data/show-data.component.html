@@ -4,7 +4,8 @@
         <thead>
             <th scope="col-3" >Name</th>
             <th scope="col-3">Surname</th>
-            <th scope="col-6" >Books</th>
+            <th scope="col-5" >Books</th>
+            <th scope="col-1">  <button routerLink="/delete-book"class=" btn btn-light"> Books Table </button></th>
         </thead>
         <tbody *ngFor="let author of authors">
             <td>
@@ -20,9 +21,8 @@
             </td>
             <td>
                 <ul><button class="btn btn-danger" (click)="onDelete(author.id)"> Delete </button>&nbsp;
-                <button class="btn btn-warning" (click)="onChange(author.id)"> change </button></ul>
+                <button class="btn btn-warning" (click)="onChange(author.id)"> Change </button></ul>
                 <ul><button class="btn btn-success" (click)="addBook(author.id)"> Add Book </button></ul>
-                <ul><button routerLink="/delete-book"class=" btn btn-light"> Books </button></ul>
             </td>
         </tbody>
     </table>

@@ -1,4 +1,4 @@
-<div class="bg-dark px-4 text-light"><br>
+<div class="px-4"><br>
     <form #userForm="ngForm" (ngSubmit)="onChange()" novalidate>
         <div class="form-group d-inline p-2">
             <label>
@@ -10,30 +10,17 @@
                 </select>
             </label>
         </div>
-        <div class="form-group d-inline p-2">
-            <label>
-                Title:<br> 
-                <select name="id" [(ngModel)]="bookModel.id" class="btn btn-light">
-                    <option value="" >Choose Book</option>
-                    <option *ngFor="let book of books" [ngValue]="book.id"> {{book.bookName}} </option>
-                   
-                </select>
-            </label>
-        </div>
         <div class="form-group">
             <label>
                 Title:
             </label>
-            <input type="text" name="bookName" class="form-control" #name="ngModel"
+            <input type="text" name="bookName" class="form-control" #bookName="ngModel"
             placeholder="Title" [(ngModel)]="bookModel.bookName" required> 
         </div>
         
-        <button
-        type="submit" class="btn btn-primary" >Edit
-        </button>
-        <p *ngIf="done">
-            Changed
-        </p>
+        <button mat-button mat-raised-button mat-dialog-close type="submit" class="btn btn-warning" *ngIf="bookName.valid" >Edit </button>
+        <button mat-button mat-raised-button mat-dialog-close class="btn btn-success" >Just forget </button>
+        
     </form> 
     <br><br>
 </div>

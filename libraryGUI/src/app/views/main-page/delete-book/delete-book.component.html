@@ -1,7 +1,7 @@
 <br>
 <table class="col-10 table table-dark m-auto ">
     <thead class="text-center">
-        <th>Tittle</th>
+        <th scope="col-5">Tittle</th>
         <th scope="col-5">Button</th>
     </thead>
     <tbody *ngFor="let book of books">
@@ -9,9 +9,10 @@
             {{book.bookName}}
         </td>
         <td class="text-center">
-            <form (ngSubmit)="onDeleteBook(book.id)">
-                <button type="submit" class="bg-danger btn col-8" name="id">Delete </button>
-            </form>
+            <ul> 
+                <button class="btn btn-warning " (click)="onChange(book.id)"> Edit Tittle </button> &nbsp;
+                <button type="submit" class="bg-danger btn " (click)="onDeleteBook(book.id)">Delete </button>
+        </ul>
         </td>
     </tbody>
 </table>
