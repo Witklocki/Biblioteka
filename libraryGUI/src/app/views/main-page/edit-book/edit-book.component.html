@@ -2,16 +2,16 @@
     <form #userForm="ngForm" (ngSubmit)="onChange()" novalidate>
         <div class="form-group d-inline p-2">
             <label>
-                Author:<br> 
+                Choose Author:<br> 
                 <select name="author" [(ngModel)]="id" class="btn btn-light">
-                    <option value="0" >Choose Author</option>
+                    <option value={{id}} > {{name}} {{surname}} </option>
                     <option *ngFor="let author of authors" [ngValue]="author.id"> {{author.name}} {{author.surname}}  </option>
                    
                 </select>
             </label>
         </div>
         <div class="form-group">
-            <label>
+            <label> 
                 Title:
             </label>
             <input type="text" name="bookName" class="form-control" #bookName="ngModel"
@@ -19,7 +19,7 @@
         </div>
         
         <button mat-button mat-raised-button mat-dialog-close type="submit" class="btn btn-warning" *ngIf="bookName.valid">Edit </button>
-        <button mat-button mat-raised-button mat-dialog-close class="btn btn-success"  >Just forget </button>
+        <button mat-button mat-raised-button mat-dialog-close class="btn btn-success" >Just forget </button>
         
     </form> 
     <br><br>

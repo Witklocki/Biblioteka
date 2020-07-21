@@ -14,14 +14,16 @@ import { doesNotThrow } from 'assert';
 export class EditBookComponent implements OnInit {
   private authorModel = new Authors();
   private bookModel: Book = new Book();
-  private id;
+  private id = this.response.authorId;
 
   private authors=[];
   private books=[];
   private authorsBooks= [];
 
-  private idBook =this.response;
+  private idBook =this.response.value;
   private title;
+  private name = this.response.name;
+  private surname = this.response.surname;
 
 
   constructor( private bookService:BookService, private authorService:AuthorService, @Inject(MAT_DIALOG_DATA)public response:any ) { }
