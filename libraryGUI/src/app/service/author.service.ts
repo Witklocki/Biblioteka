@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Authors } from 'src/app/model/Author';
 import { update } from 'src/app/model/Update';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Injectable({

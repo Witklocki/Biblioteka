@@ -46,6 +46,7 @@ public class BookController {
     }
 /* Delete records by id */
     @DeleteMapping("/deleteBook/{id}")
+
     public ResponseEntity<BookTable> delete(@PathVariable(value = "id") @RequestBody Long bookId){
 
             bookRepository.deleteById(bookId);
