@@ -10,6 +10,10 @@ export class LoginService {
 
   constructor(private http:HttpClient) { }
   postLogin(User: User){
-    return this.http.post(this.url+"/login",User)
+    const httpHeaders = new HttpHeaders({
+      'content-type':'application/json',
+      'Access-Control-Allow-Origin': 'http://localhost:4200'
+    })
+    return this.http.post<any>(this.url+"/login",User)
   }
 }
