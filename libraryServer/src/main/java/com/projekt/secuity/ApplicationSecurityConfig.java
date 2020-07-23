@@ -15,8 +15,13 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import javax.crypto.SecretKey;
+
+import java.util.Arrays;
 
 import static com.projekt.secuity.ApplicationUserRole.*;
 
@@ -46,7 +51,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.cors();
         http
-//                pozwala na zapytania z innych aplikacji ale nie dokońca bo blokuje mi app z angulara
+//                pozwala na zapytania z innych aplikacji
                 .csrf().disable()
                 .sessionManagement()
                     .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
@@ -59,6 +64,16 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticated();
 
     }
+    @Bean
+        CorsConfigurationSource corsConfigurationSource()
+        {
+            CorsConfiguration configuration = new CorsConfiguration();
+            configuration.setAllowedOrigins(Arrays.asList("*"));
+            configuration.setAllowedMethods(Arrays.asList("GET","POST"));
+            UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+            source.registerCorsConfiguration("/**", configuration);
+            return source;
+        }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
