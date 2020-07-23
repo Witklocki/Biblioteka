@@ -27,7 +27,7 @@ export class ShowDataComponent implements OnInit {
 
   ngOnInit() {
     this.authors.push(this.authorServer.getServeAll()
-    .subscribe(res =>{ this.authors = res}))
+    .subscribe(res =>{ this.authors = res.sort(this.comper)}))
   }
   onDelete(id){
     this.delete = this.dialog.open(CheckComponent)
@@ -48,7 +48,7 @@ export class ShowDataComponent implements OnInit {
     this.info = this.dialog.open(AddBookComponent,{data:id});
      this.info.afterClosed().subscribe(result => {
       this.authors.push(this.authorServer.getServeAll()
-    .subscribe(res =>{ this.authors = res}))
+    .subscribe(res =>{ this.authors = res.sort(this.comper)}))
     })
   }
 }0

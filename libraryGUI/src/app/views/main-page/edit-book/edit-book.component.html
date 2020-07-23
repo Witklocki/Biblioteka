@@ -4,7 +4,6 @@
             <label>
                 Choose Author:<br> 
                 <select name="author" [(ngModel)]="id" class="btn btn-light">
-                    <option value={{id}} > {{name}} {{surname}} </option>
                     <option *ngFor="let author of authors" [ngValue]="author.id"> {{author.name}} {{author.surname}}  </option>
                    
                 </select>

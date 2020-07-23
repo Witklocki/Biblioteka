@@ -64,16 +64,16 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticated();
 
     }
-    @Bean
-        CorsConfigurationSource corsConfigurationSource()
-        {
-            CorsConfiguration configuration = new CorsConfiguration();
-            configuration.setAllowedOrigins(Arrays.asList("*"));
-            configuration.setAllowedMethods(Arrays.asList("GET","POST"));
-            UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-            source.registerCorsConfiguration("/**", configuration);
-            return source;
-        }
+//    @Bean
+//        CorsConfigurationSource corsConfigurationSource()
+//        {
+//            CorsConfiguration configuration = new CorsConfiguration();
+//            configuration.setAllowedOrigins(Arrays.asList("*"));
+//            configuration.setAllowedMethods(Arrays.asList("GET","POST"));
+//            UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//            source.registerCorsConfiguration("/**", configuration);
+//            return source;
+//        }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
