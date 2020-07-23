@@ -54,7 +54,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 //                pozwala na zapytania z innych aplikacji
                 .csrf().disable()
                 .sessionManagement()
-                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .addFilter(new JwtUsernameAndPasswordAuthenticationFiler(authenticationManager(), jwtConfig, secretKey))
                 .addFilterAfter(new JwtTokenVerifier(jwtConfig, secretKey), JwtUsernameAndPasswordAuthenticationFiler.class)
@@ -64,16 +64,6 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticated();
 
     }
-//    @Bean
-//        CorsConfigurationSource corsConfigurationSource()
-//        {
-//            CorsConfiguration configuration = new CorsConfiguration();
-//            configuration.setAllowedOrigins(Arrays.asList("*"));
-//            configuration.setAllowedMethods(Arrays.asList("GET","POST"));
-//            UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//            source.registerCorsConfiguration("/**", configuration);
-//            return source;
-//        }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
