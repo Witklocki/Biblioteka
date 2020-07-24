@@ -12,8 +12,7 @@ import { AddBookComponent } from './add-book/add-book.component';
 })
 export class MainPageComponent implements OnInit {
  public user = "Gall Anonymous";
- public admin = "you have permition to admin tool"
- public permition = false;
+ public admin = true;
  private authors = [];
  private info;
  private do = false;

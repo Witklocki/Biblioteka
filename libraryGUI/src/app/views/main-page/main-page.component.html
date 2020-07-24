@@ -9,7 +9,7 @@
           <th scope="col" >Name</th>
           <th scope="col">Surname</th>
           <th scope="col" >Books</th>
-          <th scope="col" ><button class="btn col-12 color" routerLink="/add-author"> <h6>Add Author</h6> </button>
+          <th scope="col" *ngIf="admin" ><button class="btn col-12 color" routerLink="/add-author"> <h6>Add Author</h6> </button>
           </th>
       </thead>
       <tbody *ngFor="let author of authors">
@@ -24,7 +24,7 @@
                   {{bookTable.bookName}}
               </ul>
           </td>
-          <td>                
+          <td *ngIf="admin">                
               <ul><button class="btn col-12 color" (click)="addBook(author.id)"> <h6>Add Book</h6> </button></ul>
               <ul><button class="btn col-12 color" (click)="onChange(author.id)"> <h6>Change</h6> </button></ul>
               <ul><button class="btn col-12 color" (click)="onDelete(author.id)"> <h6>Delete</h6> </button></ul>
