@@ -16,19 +16,19 @@
                 New name
             </label>
             <input type="text" name="changeName" class="form-control" #name="ngModel"
-            placeholder={{author.name}} [(ngModel)]="authorModel.name" required> 
+            value={{author.name}} [(ngModel)]="authorModel.name" required> 
         </div>
         <div class="form-group">
             <label>
                 New surname
             </label>
             <input type="text" name="changeSurnme" class="form-control" #surname="ngModel"
-            placeholder={{author.surname}} [(ngModel)]="authorModel.surname" required>
+            value={{author.surname}} [(ngModel)]="authorModel.surname" required>
         </div>
                 <button mat-button mat-raised-button mat-dialog-close *ngIf="name.valid && surname.valid"
                 type="submit" class="btn btn-primary">Change
                 </button>
-                <button mat-button mat-raised-button mat-dialog-close class="btn btn-success"> Just forget</button>
+                <button mat-button mat-raised-button mat-dialog-close class="btn btn-success"> Close</button>
     </form> 
     <br><br>
 </div>

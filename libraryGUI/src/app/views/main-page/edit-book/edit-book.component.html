@@ -1,14 +1,6 @@
 <div class="px-4"><br>
     <form #userForm="ngForm" (ngSubmit)="onChange()" novalidate>
-        <div class="form-group d-inline p-2">
-            <label>
-                Choose Author:<br> 
-                <select name="author" [(ngModel)]="id" class="btn btn-light">
-                    <option *ngFor="let author of authors" [ngValue]="author.id"> {{author.name}} {{author.surname}}  </option>
-                   
-                </select>
-            </label>
-        </div>
+        
         <div class="form-group">
             <label> 
                 Title:
@@ -18,7 +10,7 @@
         </div>
         
         <button mat-button mat-raised-button mat-dialog-close type="submit" class="btn btn-warning" *ngIf="bookName.valid">Edit </button>
-        <button mat-button mat-raised-button mat-dialog-close class="btn btn-success" >Just forget </button>
+        <button mat-button mat-raised-button mat-dialog-close class="btn btn-success" >Close </button>
         
     </form> 
     <br><br>

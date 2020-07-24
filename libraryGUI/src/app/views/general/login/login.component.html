@@ -2,21 +2,22 @@
 <br>
 <div class="jumbotron bg-dark text-light">
     <form (ngSubmit)="onSubmit()" novalidate>
-        <div class="form-group p-2">
-            <label>
+        <div class="form-group col-10">
+            
                 Login
                 <input type="text" name="username" class="form-control"
                 placeholder="Login" [(ngModel)]="userModel.username" required>
-            </label>
+            
         </div>
-        <div class="form-group p-2">
-            <label>
+        <div class="form-group col-10 ">
+           
                 Password
                 <input type="text" name="password" class="form-control" 
                 placeholder="Password" [(ngModel)]="userModel.password" required>
-            </label>
+          
         </div>
-        <button class="btn btn-warning" type="submit">
+        <br>
+        <button class="btn btn-warning col-10 " type="submit">
             Login
         </button>
 
