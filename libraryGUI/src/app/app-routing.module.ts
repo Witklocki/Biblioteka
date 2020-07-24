@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ShowDataComponent } from './views/main-page/show-data/show-data.component';
 import { AddAuthorComponent } from "./views/main-page/add-author/add-author.component";
 import { AddBookComponent } from "./views/main-page/add-book/add-book.component";
 import { MainPageComponent } from "./views/main-page/main-page.component";
@@ -13,7 +12,6 @@ import { CheckComponent } from './views/general/check/check.component';
 
 
 const routes: Routes = [
-  {path:'show-data', component: ShowDataComponent },
   {path: 'add-author', component: AddAuthorComponent },
   {path: 'add-book', component: AddBookComponent },
   {path:'', component: MainPageComponent },
@@ -32,6 +30,6 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 // export wszyskich elementów używanych przez rooting
-export const routingComponent = [ ShowDataComponent, AddAuthorComponent, AddBookComponent, 
+export const routingComponent = [ AddAuthorComponent, AddBookComponent, 
    MainPageComponent,EditAuthorComponent,EditBookComponent, PageNotFoundComponent,DeleteBookComponent, 
    LoginComponent,CheckComponent  ]

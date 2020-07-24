@@ -2,6 +2,33 @@
     <h2>Hello {{user}}</h2>
     <p *ngIf="permition"> {{admin}}</p>
 </div>
-<div class="jumbotron bg-dark ">
-  <button routerLink="login" class="btn btn-light"> Login </button>
+<div class="col-12">
+  <p>{{test}}</p>
+  <table class="col-12 table table-dark">
+      <thead>
+          <th scope="col" >Name</th>
+          <th scope="col">Surname</th>
+          <th scope="col" >Books</th>
+          <th scope="col" ><button class="btn col-12 color" routerLink="/add-author"> <h6>Add Author</h6> </button>
+          </th>
+      </thead>
+      <tbody *ngFor="let author of authors">
+          <td> 
+              {{author.name}}
+          </td>
+          <td>
+              {{author.surname}}
+          </td>
+          <td>
+              <ul *ngFor="let bookTable of author.bookTable">
+                  {{bookTable.bookName}}
+              </ul>
+          </td>
+          <td>                
+              <ul><button class="btn col-12 color" (click)="addBook(author.id)"> <h6>Add Book</h6> </button></ul>
+              <ul><button class="btn col-12 color" (click)="onChange(author.id)"> <h6>Change</h6> </button></ul>
+              <ul><button class="btn col-12 color" (click)="onDelete(author.id)"> <h6>Delete</h6> </button></ul>
+          </td>
+      </tbody>
+  </table>
 </div>

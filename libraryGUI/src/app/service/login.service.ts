@@ -14,6 +14,6 @@ export class LoginService {
       "Content-Type": "application/json",
       'Access-Control-Allow-Origin': 'http://localhost:4200',
     })
-    return this.http.post<any>(this.url+"/login",User,{headers:httpHeaders})
+    return this.http.post<any>(this.url+"/login",User,{headers:httpHeaders});
   }
 }
