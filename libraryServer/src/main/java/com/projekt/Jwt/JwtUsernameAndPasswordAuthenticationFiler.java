@@ -58,7 +58,7 @@ public class JwtUsernameAndPasswordAuthenticationFiler extends UsernamePasswordA
                                             FilterChain chain,
                                             Authentication authResult) throws IOException, ServletException {
 
-        String token = Jwts.builder()
+         String token = Jwts.builder()
                             .setSubject(authResult.getName())
                             .claim("authorities", authResult.getAuthorities())
                             .setIssuedAt(new Date())
@@ -68,5 +68,6 @@ public class JwtUsernameAndPasswordAuthenticationFiler extends UsernamePasswordA
                             .signWith(secretKey)
                             .compact();
         response.addHeader(jwtConfig.getAuthorizationHeader(),jwtConfig.getTokenPrefix() + token);
+        System.out.print(jwtConfig.getTokenPrefix() + token);
     }
 }
